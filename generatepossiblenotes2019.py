@@ -19,7 +19,7 @@ import random
 
 from randomfunctions import *
     
-def generatePossibleNotes(chord):
+def generatePossibleNotes(chord, voice):
     '''
     Generates a set of possible notes from a given chord, using its structure
     '''
@@ -60,8 +60,16 @@ def generatePossibleNotes(chord):
         #print(root, additional_notes, baseNotes, possibleNotes)
         y = y + 1
         multiple = multiple + 1
+    
+    if voice == "bass": 
+        possibleNotesCropped = [x for x in possibleNotes if x < 42]
+    elif voice == "mid": 
+        possibleNotesCropped = [x for x in possibleNotes if x >= 42 and x <= 84]
+    else: 
+        possibleNotesCropped = [x for x in possibleNotes if x > 84]
+
         
     
-    return possibleNotes
+    return possibleNotesCropped
         
         

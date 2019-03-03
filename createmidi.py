@@ -40,6 +40,8 @@ def createMidi(inputArray):
             
         track.append(MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=96, notated_32nd_notes_per_beat=8, time=0))
         track.append(MetaMessage('set_tempo', tempo=TEMPO, time=0))
+
+        numMessages = 0 
     
         for i in range(inputArray.shape[0]): 
             
@@ -66,14 +68,30 @@ def createMidi(inputArray):
                 currentNotes = inputArray[i][j]
                 currentNoteValues = [x[0] for x in currentNotes]
                 prevNoteValues = [x[0] for x in prevNotes]
+
+                #print("prevNotes: ", prevNotes)
+                #print("currentNotes: ", currentNotes)
+
+                #input("press any key to continue ")
                 
                 
                 # Generate a note_off message if the note is in prevNotes but not in currentNotes. 
                 # Generate a note_on message if the third value of the note is 1 (this represents note on)          
                 messageGenerated = False
-                for n in union2d(prevNotes, currentNotes): 
+
+                if array_equal(prevNotes, currentNotes): 
+
+                    N = currentNotes
+                else: 
+
+                    N = [currentNotes[0], prevNotes[0]]
+
+
+                for n in N: 
                     # if the first note value is 0 don't play it, that represents silence
                     # send a note_on  message if the third note value is 1
+
+                    #print("n: ", n)
                     if n[2] == 1 and n[0] != 0: 
                         
                         # remember that we added 1 to the value of the note to store it in the 
@@ -83,24 +101,31 @@ def createMidi(inputArray):
                         
                         track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                         messageGenerated = True
+                        #print(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                     # send a note_off message if the note is no longer being played
                     elif n[0] not in currentNoteValues and n[0] != 0: 
                         
                         track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                         messageGenerated = True
+                        #print(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                     # send a note_off message if the note we just turned on was the same as a note already
                     # being played (a repeat note)
                     elif n[2] == 1 and n[0] in prevNoteValues and n[0] != 0: 
                         track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                         messageGenerated = True
+                        #print(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                 # if a message was generated (either note_on or note_off), then reset the time
                 # since last message to 0
                 if messageGenerated == True: 
                     # the value here resets to 1 instead of 0, because its been at least one tick 
                     # since the last message
+
+                    numMessages += 1
                     timeSinceLastMessage = 1
                 else: 
                     # if there was no message, simply increment the time since the last message
                     timeSinceLastMessage = timeSinceLastMessage + 1
 
+        
+        #print("total number of messages: ", numMessages)
         mid.save('midi/new_song.mid')

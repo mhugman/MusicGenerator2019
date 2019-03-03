@@ -63,7 +63,7 @@ def generateChordProgression(key, mode):
     
     for r in rootProgression: 
     
-        chordSize = random.randint(3,5)
+        chordSize = random.randint(4,5)
     
         chordNotes = random.sample(notes[1:], chordSize - 1)
         

@@ -1,3 +1,8 @@
+
+### Song Generator 2016 
+
+from __future__ import print_function
+
 import mido
 #import sys
 import time
@@ -14,22 +19,24 @@ import random
 
 from randomfunctions import *
 from generatechordprogression import *
-from generatepossiblenotes2019 import *
+from generatepossiblenotes import *
 from targetfunctions import *
 from plotNotes import *
-from createpattern import *
 
 def createArray(): 
-
+    '''
+    This function will create a note array from scratch, without input from a midi file like the parseMidi function
+    '''
+    
+    #### TWEAKABLE PARAMETERS ####
+    
     num_tracks = 3
     
-    '''
     song_length = int(round(random.normalvariate(7000,500)))
     if song_length < 100: 
         song_length = 100
-    '''
-
-    song_length = 5000
+    
+    silenceProb = random.randint(0,50)  # Should be between 0 and 100 (percent)
     
     # Specify which tracks are bass, mid, and treble to control their likely range of notes
     trackProperties = {
@@ -79,19 +86,30 @@ def createArray():
         },  
     
     }
-
+    
     trackTargetNotes = {
         0: blendTargetFunctions(song_length, trackVariables[0]["coefficient"], trackVariables[0]["shift"], trackVariables[0]["mean"], trackVariables[0]["sigma"], trackVariables[0]["bias"]), 
         1: blendTargetFunctions(song_length, trackVariables[1]["coefficient"], trackVariables[1]["shift"], trackVariables[1]["mean"], trackVariables[1]["sigma"], trackVariables[1]["bias"]), 
         2: blendTargetFunctions(song_length, trackVariables[2]["coefficient"], trackVariables[2]["shift"], trackVariables[2]["mean"], trackVariables[2]["sigma"], trackVariables[2]["bias"])
     }
-
+    
     trackClosestNotes = {
         0: [],
         1: [], 
         2: [],     
     }
-
+    
+        
+    ##################
+     
+    notes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    # mode is which note is the tonal center
+    modes = [ 1, 2, 3, 4, 5, 6, 7]
+    
+    key = random.choice(notes)
+    mode = random.choice(modes)
+    
+    
     # Initialize the note Array 
     noteArray = zeros((1,1,1), dtype=(int,3))
     
@@ -104,163 +122,33 @@ def createArray():
     
     for x in range(song_length): 
         noteArray = hstack((noteArray, emptyVector))
-
-
-    notes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-    # mode is which note is the tonal center
-    modes = [ 1, 2, 3, 4, 5, 6, 7]
-    
-    key = random.choice(notes)
-    mode = random.choice(modes)
-
-
+        
     chordProgression = generateChordProgression(key, mode)
-    print("chord progression: ", key, chordProgression)
-
+    print(key, chordProgression)
+    
     for track in range(num_tracks): 
-
+    
+        
+    
         # i tracks where we are in the chord progression
         i = 0
         # j tracks how long we've been playing the chord
         j = 0
         # k tracks how long we've been playing a note
         k = 0
-        # m tracks where we are in the rhythm/note pattern
-        m = 0 
-
-        track_voice = trackProperties[track]["voice"]
-
-        rhythm_pattern, note_pattern = createPattern()
         
         # Initialize the first note we're gonna play before entering the loop
         currentChord = chordProgression[0]
-        possibleNotes = generatePossibleNotes(currentChord, track_voice)
-
-        selectedNotes = np.random.choice(possibleNotes,4, replace=False)
-
-        currentNotes = [(selectedNotes[note_pattern[m]] + 1, 88 ,1)]
-        noteLength = int(round(currentChord["length"] / 4))
+        possibleNotes = generatePossibleNotes(currentChord)
+        currentNotes = [(random.choice(possibleNotes) + 1,random.randint(0,127) ,1)]
+        noteLength = 1 + random.randint(0, currentChord["length"] - 1)
         noteArray[track][0] = asarray(currentNotes)
-
         
-
-        print("patterns: ", rhythm_pattern, note_pattern)
-
-        print("possible Notes: ", possibleNotes)
-
-        print("current notes: ", currentNotes)
-
-        print("selected notes: ", selectedNotes)
-
-        print("note length: ", noteLength)
-
-        for t in range(1,song_length): 
-
-            #input("Press any key to continue: ")
-
-            #print("Previous note array value: ", noteArray[track][t - 1])
-
-            #print("i: ", i)
-            #print("j: ", j)
-            #print("k: ", k)
-            #print("m: ", m)
-
-
-            # previous notes are the same as (not yet updated) current notes, 
-            # but the third value is 0 instead of 1 (denoting the fact that 
-            # the note is sustained, rather than hit)
-            prevNotes = []
-            for x in currentNotes: 
-                prevNotes.append((x[0], x[1], 0))
-
-
-            # if we've played the chord for its full length, switch to the next chord
-            if j > currentChord["length"]: 
-                i = i + 1
-                if i < len(chordProgression): 
-                    currentChord = chordProgression[i]
-                else: 
-                    i = 0
-                    currentChord = chordProgression[i]
-                j = 0
-        
-                possibleNotes = generatePossibleNotes(currentChord, track_voice)
-
-                selectedNotes = np.random.choice(possibleNotes,4, replace=False)
-
-                noteLength = int(round(currentChord["length"] / 4))
-
-
-            if rhythm_pattern[m] == 1: 
-                silence = False
-            else: 
-                silence = True
-
-
-            #print("Silence: ", silence)
-
-
-
-
-            if k > noteLength and silence == False: 
-
-                m += 1
-
-                if m >= 4: 
-
-                    m = 0 
-
-                currentNotes = [(selectedNotes[note_pattern[m]] + 1, 88 ,1)]
-                noteLength = int(round(currentChord["length"] / 4))
-
-                #print("end of note - no silence")
-                
-                
-                #noteLength = 1 + random.randint(0, currentChord["length"] - j)
-                k = 0
-            elif k > noteLength and silence == True: 
-
-                m += 1
-
-                if m >= 4: 
-
-                    m = 0 
-
-                #print("end of note - silence")
-
-                currentNotes = [(0, 88 ,1)]
-                noteLength = int(round(currentChord["length"] / 4))
-                k = 0
-            else: 
-                currentNotes = prevNotes
-                #print("continue previous note")
-            
-            #raise ValueError(noteArray)
-
-
-            noteArray[track][t] = asarray(currentNotes)
-
-            '''
-            try: 
-                noteArray[track][t] = asarray(currentNotes)
-            except: 
-                raise ValueError(track, t, currentNotes)
-                print("something went wrong")
-            '''
-            
-            
-        
-            j = j + 1
-            k = k + 1
-
-
-
-        '''
-
-
         # keep track of the closest notes for plotting them
         trackClosestNotes[track].append(0)
-
+        
+        silence = False
+        
         for t in range(1,song_length): 
     
             # previous notes are the same as (not yet updated) current notes, 
@@ -342,9 +230,8 @@ def createArray():
         
             j = j + 1
             k = k + 1
-
-        '''
-
-    #plotNotes(song_length, num_tracks, trackTargetNotes, trackClosestNotes)
+            
+    
+    plotNotes(song_length, num_tracks, trackTargetNotes, trackClosestNotes)
             
     return noteArray
