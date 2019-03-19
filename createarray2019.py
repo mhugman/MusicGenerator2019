@@ -114,8 +114,8 @@ def createArray():
     mode = random.choice(modes)
 
 
-    chordProgression = generateChordProgression(key, mode)
-    print("chord progression: ", key, chordProgression)
+    chordProgression, cp_info = generateChordProgression(key, mode)
+    print("chord progression: ", key, chordProgression, cp_info)
 
     for track in range(num_tracks): 
 
