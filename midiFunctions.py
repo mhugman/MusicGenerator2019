@@ -7,45 +7,14 @@ from mido.midifiles import MidiTrack
 from mido import MetaMessage
 from mido import Message
 
-def parseMidi(mid): 
+def parseMidi(noteArray, velocityArray, onOffArray, mid): 
+    
+    # Exclude certain tracks from being parsed, such as percussion
+    exclusions = ["Percussion"]
 
-    # Initialize the note Array 
-    noteArray = np.zeros((1,1,1), dtype=(int,3))
-        
-    # First build the note Array vertically (one row for each track, excluding the one
-    # track we already accounted for in initializing the array
-    # go through the messages and add up all the delta times of the messages, so we can 
-    # figure out the maximum track length in clicks. This will let us us know how
-    # far to build out the array horizontally
-    
-    maxTrackLength = 0
-    for i, track in enumerate(mid.tracks[1:]):
-        
-        trackLength = 0
-        for message in track:
-            trackLength = trackLength + message.time
-            
-        if trackLength > maxTrackLength: 
-            maxTrackLength = trackLength
-        if i > 0: 
-            noteArray = np.vstack((noteArray, [[[(0,0,0)]]]))
-            
-    #raise ValueError(noteArray)
-            
-    #prettyPrintArray(noteArray)
-    
-    # Build the array horizontally, by adding empty vertical vectors for the length
-    # of the longest track
-        
-    emptyVector = np.zeros((noteArray.shape[0],1,1), dtype=(int,3))
-    
-    #raise ValueError(maxTrackLength)
-    
-    for x in range(maxTrackLength): 
-        noteArray = np.hstack((noteArray, emptyVector))
-    
-    #print(noteArray.shape)   
-    #prettyPrintArray(noteArray)
+    maxSongLength = noteArray.shape[1]
+
+    #print("max Song Length: ", maxSongLength)
         
     
     for i, track in enumerate(mid.tracks[1:]):
@@ -58,6 +27,10 @@ def parseMidi(mid):
             
             currentTime = 0
             for message in track:
+
+                if currentTime >= maxSongLength - 1000: 
+
+                    break
                 
                 if message.type == "note_on" or message.type == "note_off":
                     prevTime = currentTime
@@ -75,8 +48,13 @@ def parseMidi(mid):
                     # previous notes
                     if len(prevNotes) > 0:     
                         deltaTime = currentTime - prevTime
-                        for j in range(0, deltaTime - 1):     
-                            noteArray[i][currentTime - 1 - j] = prevNotes
+                        for j in range(0, deltaTime - 1): 
+                            try:     
+                                noteArray[i][currentTime - 1 - j] = prevNotes[0][0]
+                                velocityArray[i][currentTime - 1 - j] = prevNotes[0][1]
+                                velocityArray[i][currentTime - 1 - j] = prevNotes[0][2]
+                            except: 
+                                pass
                     
                     # update the current Notes being played with the information in the
                     # message
@@ -93,13 +71,18 @@ def parseMidi(mid):
                     # fill in the value for this particular time with the current Notes
                     if len(currentNotes) > 0:    
                         try:  
-                            noteArray[i][currentTime] = asarray(currentNotes)
+                            noteArray[i][currentTime] = np.asarray(currentNotes[0][0])
+                            velocityArray[i][currentTime] = np.asarray(currentNotes[0][1])
+                            onOffArray[i][currentTime] = np.asarray(currentNotes[0][2])
                         except: 
-                            raise ValueError(message, i, currentTime, currentNotes)
+                            #raise ValueError(message, i, currentTime, currentNotes)
+                            pass
+
+
                         
     
     #raise ValueError(noteArray.shape[1])            
-    return noteArray
+    return noteArray, velocityArray, onOffArray
 
 def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename): 
 
