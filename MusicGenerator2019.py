@@ -1,19 +1,8 @@
 import mido
+import numpy as np
 
-from mido import MidiFile
-from mido.midifiles import MidiTrack
-from mido import MetaMessage
-from mido import Message
-
-import time
-import numpy
-from numpy import *
-import math
-import random
-
-from createarray2019 import *
-from createmidi import *
-from prettyprintarray import *
+import createmidi
+import miditoarray
 
 
 def playMidi(mid): 
@@ -22,15 +11,21 @@ def playMidi(mid):
         outport.send(message)
 
 
+SONG_LENGTH = 2000
+NUM_TRACKS = 4
+MAX_SIMUL_NOTES = 3
+TEMPO = 100
+
+
 outport = mido.open_output()
 
-noteArray = createArray()
+noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH, 1, MAX_SIMUL_NOTES))
+velocityArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
+onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
-#prettyPrintArray(noteArray)
-    
-createMidi(noteArray)
+createmidi.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)))
 
-mid = MidiFile('midi/new_song.mid')
+mid = mido.MidiFile('midi/new_song.mid')
 
 
 #mid = MidiFile('mario.mid')
