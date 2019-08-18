@@ -1,8 +1,7 @@
 import mido
 import numpy as np
 
-import createmidi
-import miditoarray
+import midiFunctions
 
 
 def playMidi(mid): 
@@ -22,7 +21,7 @@ noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 velocityArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
-createmidi.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)))
+midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)))
 
 mid = mido.MidiFile('midi/new_song.mid')
 
