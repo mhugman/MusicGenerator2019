@@ -12,8 +12,8 @@ def playMidi(mid):
 
 
 SONG_LENGTH = 2000
-NUM_TRACKS = 5
-TEMPO = 100
+NUM_TRACKS = 2
+TEMPO = 80
 
 
 outport = mido.open_output()
