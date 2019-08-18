@@ -44,18 +44,18 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO):
             
             track.append(Message('control_change', channel = i, control=0, value=0, time=0))
 
-            if i == 0 : 
+            if i >= 0 and i < 3: 
                 # Grand Piano
                 track.append(Message('program_change', channel = i, program=0, time=0))
 
-            elif i == 1: 
+            elif i == 3: 
                 # Electric Guitar (clean)
                 track.append(Message('program_change', channel = i, program=27, time=0))
 
-            elif i == 2: 
+            elif i == 4: 
                 # Electric Bass (finger)
                 track.append(Message('program_change', channel = i, program=33, time=0))
-            elif i == 3: 
+            elif i == 5: 
                 # Glockenspiel
                 track.append(Message('program_change', channel = i, program=9, time=0))
             else: 
@@ -75,26 +75,21 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO):
                 noteVelocity = velocityArray[i,j]
                 onOff = onOffArray[i,j]
 
-
-                for k in range(noteArray.shape[3]): 
-
-                    
-
-                    noteValue = noteArray[i,j,0,k]
+                noteValue = noteArray[i,j]
                     
                     
-                    if onOff == 1: 
-                        track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                        messageGenerated = True
+                if onOff == 1: 
+                    track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    messageGenerated = True
 
-                    elif onOff == -1: 
+                elif onOff == -1: 
 
-                        track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                        messageGenerated = True
+                    track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    messageGenerated = True
 
-                    else: 
-                        # onOff value is 0, don't do anything
-                        pass
+                else: 
+                    # onOff value is 0, don't do anything
+                    pass
 
 
                 # if a message was generated (either note_on or note_off), then reset the time

@@ -12,14 +12,13 @@ def playMidi(mid):
 
 
 SONG_LENGTH = 2000
-NUM_TRACKS = 4
-MAX_SIMUL_NOTES = 3
+NUM_TRACKS = 5
 TEMPO = 100
 
 
 outport = mido.open_output()
 
-noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH, 1, MAX_SIMUL_NOTES))
+noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 velocityArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
