@@ -3,16 +3,24 @@ import numpy as np
 import torch
 import math
 import sys
+import datetime
 
 import midiFunctions
 
 np.set_printoptions(threshold=sys.maxsize)
 
-SONG_LENGTH = 120000
-NUM_TRACKS = 3
-TEMPO = 850
 
-# Mario about 850 BPM
+############ GLOBAL PARAMETERS ######################
+
+SONG_LENGTH = 120000 # About 120000 for Mario
+NUM_TRACKS = 3
+TEMPO = 850 # Mario about 850 BPM
+
+H = 100 # dimensions for hidden layer
+ITERATIONS = 500
+LEARNING_RATE = 0.0001
+FILEPRE = "emulate_mario"
+FILEPOST = "a"
 
 # Calculate global parameter for square Matrix
 
@@ -21,6 +29,8 @@ D = 0
 while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
 
     D += 1
+
+#####################################################
 
 def toSquareArray(rectArray): 
 
@@ -104,17 +114,6 @@ def toRectArray(squareArray):
 
 
 
-    
-
-    
-
-
-
-    
-
-    
-
-
 def playMidi(mid): 
     
     for message in mid.play():
@@ -146,9 +145,13 @@ noteArray_mario, velocityArray_mario, onOffArray_mario = midiFunctions.parseMidi
 
 noteArray_mario_square = toSquareArray(noteArray_mario)
 
+velocityArray_mario_square = toSquareArray(velocityArray_mario)
+
+onOffArray_mario_square = toSquareArray(onOffArray_mario)
+
 #print("squareArray: ", noteArray_mario_square)
 
-noteArray_mario_rect = toRectArray(noteArray_mario_square)
+#noteArray_mario_rect = toRectArray(noteArray_mario_square)
 
 #print("noteArray_mario: ", noteArray_mario)
 #print(noteArray_mario.shape)
@@ -157,10 +160,10 @@ noteArray_mario_rect = toRectArray(noteArray_mario_square)
 #print("noteArray_mario_rect: ", noteArray_mario_rect)
 #print(noteArray_mario_rect.shape)
 
-midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
+#midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
 
 #mid = mido.MidiFile('midi/new_song.mid')
-mid = mido.MidiFile('midi/new_mario_rect.mid')
+#mid = mido.MidiFile('midi/new_mario_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
 #mid = mido.MidiFile('midi/mario.mid')
 
@@ -172,27 +175,47 @@ mid = mido.MidiFile('midi/new_mario_rect.mid')
 
 # source: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
-H = 100
+
 
 
 # Create random Tensors to hold inputs and outputs
 #x = torch.from_numpy(noteArray_square.astype("float")).float()
 
+x_note = torch.randn(D, D)
+x_vel = torch.randn(D, D)
+x_onOff = torch.randn(D, D)
 
+print("velocityArray_mario_square: ", velocityArray_mario_square)
 
+y_note = torch.from_numpy(noteArray_mario_square.astype("float")).float()
+y_vel = torch.from_numpy(velocityArray_mario_square.astype("float")).float()
+y_onOff = torch.from_numpy(onOffArray_mario_square.astype("float")).float()
 
+print("y_vel: ", y_vel)
 
-x = torch.randn(D, D)
-y = torch.from_numpy(noteArray_mario_square.astype("float")).float()
+raise ValueError(234)
 
 #x = x * (1./128)
-y = y * (1./128)
+y_note = y_note * (1./128)
+y_vel = y_vel * (1./128)
 
 # Use the nn package to define our model as a sequence of layers. nn.Sequential
 # is a Module which contains other Modules, and applies them in sequence to
 # produce its output. Each Linear Module computes output from input using a
 # linear function, and holds internal Tensors for its weight and bias.
-model = torch.nn.Sequential(
+model_note = torch.nn.Sequential(
+    torch.nn.Linear(D, H),
+    torch.nn.ReLU(),
+    torch.nn.Linear(H, D),
+)
+
+model_vel = torch.nn.Sequential(
+    torch.nn.Linear(D, H),
+    torch.nn.ReLU(),
+    torch.nn.Linear(H, D),
+)
+
+model_onOff = torch.nn.Sequential(
     torch.nn.Linear(D, H),
     torch.nn.ReLU(),
     torch.nn.Linear(H, D),
@@ -202,46 +225,67 @@ model = torch.nn.Sequential(
 # case we will use Mean Squared Error (MSE) as our loss function.
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
-#learning_rate = 0.0000005
-learning_rate = 0.0001
-for t in range(20000):
-    # Forward pass: compute predicted y by passing x to the model. Module objects
-    # override the __call__ operator so you can call them like functions. When
-    # doing so you pass a Tensor of input data to the Module and it produces
-    # a Tensor of output data.
-    y_pred = model(x)
 
-    # Compute and print loss. We pass Tensors containing the predicted and true
-    # values of y, and the loss function returns a Tensor containing the
-    # loss.
-    loss = loss_fn(y_pred, y)
-    print(t, loss.item())
+for t in range(ITERATIONS):
 
-    # Zero the gradients before running the backward pass.
-    model.zero_grad()
+    y_pred_note = model_note(x_note)
+    y_pred_vel = model_vel(x_vel)
+    y_pred_onOff = model_onOff(x_onOff)
 
-    # Backward pass: compute gradient of the loss with respect to all the learnable
-    # parameters of the model. Internally, the parameters of each Module are stored
-    # in Tensors with requires_grad=True, so this call will compute gradients for
-    # all learnable parameters in the model.
-    loss.backward()
+    print(y_pred_vel)
 
-    # Update the weights using gradient descent. Each parameter is a Tensor, so
-    # we can access its gradients like we did before.
+    loss_note = loss_fn(y_pred_note, y_note)
+    loss_vel = loss_fn(y_pred_vel, y_vel)
+    loss_onOff = loss_fn(y_pred_onOff, y_onOff)
+
+    print(t, loss_note.item())
+
+    model_note.zero_grad()
+
+    loss_note.backward()
+
+    
     with torch.no_grad():
-        for param in model.parameters():
-            param -= learning_rate * param.grad
+        for param in model_note.parameters():
+            param -= LEARNING_RATE * param.grad
+
+    model_vel.zero_grad()
+
+    loss_vel.backward()
+
+    
+    with torch.no_grad():
+        for param in model_vel.parameters():
+            param -= LEARNING_RATE * param.grad
+
+    model_onOff.zero_grad()
+
+    loss_onOff.backward()
+
+    
+    with torch.no_grad():
+        for param in model_onOff.parameters():
+            param -= LEARNING_RATE * param.grad
 
 ############ END DEEP LEARNING ########################
 
-y_pred = y_pred * 127
+y_pred_note = y_pred_note * 127
+y_pred_vel = y_pred_vel * 127
 
-y_pred_rect = toRectArray(y_pred.int())
+y_pred_note_rect = toRectArray(y_pred_note.int())
+y_pred_vel_rect = toRectArray(y_pred_vel.int())
+y_pred_onOff_rect = toRectArray(y_pred_onOff.int())
+
+#print("y_pred_note_rect: ", y_pred_note_rect)
+#print("y_pred_vel_rect: ", y_pred_vel_rect)
+#print("y_pred_onOff_rect: ", y_pred_onOff_rect)
+
+filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 
-midiFunctions.createMidi(y_pred_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "y_pred_rect")
+midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, onOffArray_mario, int(round(60000000 / TEMPO)), filename )
 
-mid = mido.MidiFile('midi/y_pred_rect.mid')
+mid = mido.MidiFile('midi/' + filename + '.mid')
 
 playMidi(mid)
 
