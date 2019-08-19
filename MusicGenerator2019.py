@@ -2,41 +2,114 @@ import mido
 import numpy as np
 import torch
 import math
+import sys
 
 import midiFunctions
 
-SONG_LENGTH = 25000
-NUM_TRACKS = 5
-TEMPO = 900
+np.set_printoptions(threshold=sys.maxsize)
 
-# Mario about 900 BPM
+SONG_LENGTH = 120000
+NUM_TRACKS = 3
+TEMPO = 850
+
+# Mario about 850 BPM
 
 def toSquareArray(rectArray): 
 
-    D = int(math.ceil((SONG_LENGTH / NUM_TRACKS) / 2))
+    numChunks = int(math.ceil((SONG_LENGTH / NUM_TRACKS)))
 
+    D = 0 
+
+    while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
+
+        D += 1
+    
+    #print("numChunks: ", numChunks)
+    print("D: ", D)
+    
     squareArray = np.zeros((D, D)).astype("int")
 
-    row = 0 
-    col = 0 
+    numRowChunks = int(math.floor((D / NUM_TRACKS)))
+    numColChunks = int(math.floor((D / NUM_TRACKS)))
 
-    chunk = 1 
+    #print("numRowChunks: ", numRowChunks)
 
-    running = True
+    chunk = 0
 
-    endOfSong = False
-    endOfRow = False
+    for i in range(numRowChunks - 1): 
 
-    while(running):
-        squareArray[row * NUM_TRACKS : row * NUM_TRACKS + NUM_TRACKS: , col * NUM_TRACKS : col * NUM_TRACKS + NUM_TRACKS]  = rectArray[:, chunk * NUM_TRACKS :  chunk * NUM_TRACKS + NUM_TRACKS]
 
-            col += 1
+        for j in range(numColChunks - 1): 
+
+            #print("i: ", i)
+            #print("j: ", j)
+
+            #print("row copying in square array from: ", NUM_TRACKS * i, "to ", NUM_TRACKS * i + NUM_TRACKS)
+            #print("col copying in square array from: ", NUM_TRACKS * j, "to ", NUM_TRACKS * j + NUM_TRACKS)
+
+            #print("rect source col from ", NUM_TRACKS * chunk, "to ", NUM_TRACKS * chunk + NUM_TRACKS)
+
+            #print("source: ", rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS])
+
+            squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS] = rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS]
+            
+            #print("destination: ", squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS] )
 
             chunk += 1
 
-        except: 
+    return squareArray
 
-            row 
+def toRectArray(squareArray):
+
+    numChunks = int(math.ceil((SONG_LENGTH / NUM_TRACKS)))
+
+    D = 0 
+
+    while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
+
+        D += 1
+    
+    #print("numChunks: ", numChunks)
+    #print("D: ", D)
+    
+    rectArray = np.zeros((NUM_TRACKS, numChunks * NUM_TRACKS)).astype("int")
+
+    numRowChunks = int(math.floor((D / NUM_TRACKS)))
+    numColChunks = int(math.floor((D / NUM_TRACKS)))
+
+    #print("numColChunks: ", numColChunks)
+
+    chunk = 0
+
+    for i in range(numRowChunks - 1): 
+
+
+        for j in range(numColChunks - 1): 
+
+            #print("i: ", i)
+            #print("j: ", j)
+
+            #print("row source square array from: ", NUM_TRACKS * i, "to ", NUM_TRACKS * i + NUM_TRACKS)
+            #print("col source square array from: ", NUM_TRACKS * j, "to ", NUM_TRACKS * j + NUM_TRACKS)
+
+            #print("rect destination col from ", NUM_TRACKS * chunk, "to ", NUM_TRACKS * chunk + NUM_TRACKS)
+
+            #print("source: ", squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS])
+
+
+            rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS] = squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS]
+
+            #print(rectArray[:,:NUM_TRACKS * chunk + NUM_TRACKS])
+
+            chunk += 1
+
+    return rectArray
+
+
+
+    
+
+    
 
 
 
@@ -58,7 +131,7 @@ noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 velocityArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
-print("noteArray: ", noteArray)
+#print("noteArray: ", noteArray)
 
 
 midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
@@ -71,6 +144,30 @@ onOffArray_mario = np.zeros(noteArray.shape).astype("int")
 #print("note Array mario shape: ", noteArray_mario.shape)
 
 noteArray_mario, velocityArray_mario, onOffArray_mario = midiFunctions.parseMidi(noteArray_mario, velocityArray_mario, onOffArray_mario, mido.MidiFile('midi/mario.mid'))
+
+noteArray_mario_square = toSquareArray(noteArray_mario)
+
+#print("squareArray: ", noteArray_mario_square)
+
+noteArray_mario_rect = toRectArray(noteArray_mario_square)
+
+#print("noteArray_mario: ", noteArray_mario)
+#print(noteArray_mario.shape)
+#print("noteArray_mario_square: ", noteArray_mario_square)
+#print(noteArray_mario_square.shape)
+#print("noteArray_mario_rect: ", noteArray_mario_rect)
+#print(noteArray_mario_rect.shape)
+
+midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
+
+#mid = mido.MidiFile('midi/new_song.mid')
+mid = mido.MidiFile('midi/new_mario_rect.mid')
+#mid = mido.MidiFile('midi/test2.mid')
+#mid = MidiFile('mario.mid')
+
+playMidi(mid)
+
+raise ValueError(2456)
 
 ############ DEEP LEARNING ########################
 
@@ -134,12 +231,3 @@ for t in range(500):
 
 ############ END DEEP LEARNING ########################
 
-print("noteArray_mario: ", noteArray_mario)
-
-midiFunctions.createMidi(noteArray_mario, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario")
-
-#mid = mido.MidiFile('midi/new_song.mid')
-mid = mido.MidiFile('midi/new_mario.mid')
-#mid = MidiFile('mario.mid')
-
-playMidi(mid)
