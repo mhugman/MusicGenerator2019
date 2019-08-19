@@ -25,7 +25,7 @@ def toSquareArray(rectArray):
         D += 1
     
     #print("numChunks: ", numChunks)
-    print("D: ", D)
+    #print("D: ", D)
     
     squareArray = np.zeros((D, D)).astype("int")
 
@@ -131,6 +131,8 @@ noteArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 velocityArray = np.random.randint(0, 128, size=(NUM_TRACKS, SONG_LENGTH))
 onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
+noteArray_square = toSquareArray(noteArray)
+
 #print("noteArray: ", noteArray)
 
 
@@ -149,7 +151,7 @@ noteArray_mario_square = toSquareArray(noteArray_mario)
 
 #print("squareArray: ", noteArray_mario_square)
 
-noteArray_mario_rect = toRectArray(noteArray_mario_square)
+#noteArray_mario_rect = toRectArray(noteArray_mario_square)
 
 #print("noteArray_mario: ", noteArray_mario)
 #print(noteArray_mario.shape)
@@ -158,31 +160,30 @@ noteArray_mario_rect = toRectArray(noteArray_mario_square)
 #print("noteArray_mario_rect: ", noteArray_mario_rect)
 #print(noteArray_mario_rect.shape)
 
-midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
+#midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
 
 #mid = mido.MidiFile('midi/new_song.mid')
-mid = mido.MidiFile('midi/new_mario_rect.mid')
+#mid = mido.MidiFile('midi/new_mario_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
-#mid = MidiFile('mario.mid')
+#mid = mido.MidiFile('midi/mario.mid')
 
-playMidi(mid)
+#playMidi(mid)
 
-raise ValueError(2456)
+
 
 ############ DEEP LEARNING ########################
+
+# source: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
 H = 100
 
 
 # Create random Tensors to hold inputs and outputs
-x_note = torch.from_numpy(noteArray)
-y_note = torch.randn(NUM_TRACKS, SONG_LENGTH)
+x = torch.from_numpy(noteArray_square.astype("float")).float()
+y = torch.from_numpy(noteArray_mario_square.astype("float")).float()
 
-x_vel = torch.from_numpy(velocityArray)
-y_vel = torch.randn(NUM_TRACKS, SONG_LENGTH)
-
-x_onoff = torch.from_numpy(onOffArray)
-y_onoff = torch.randn(NUM_TRACKS, SONG_LENGTH)
+D_in = x.size()[0]
+D_out = D_in
 
 
 
@@ -230,4 +231,13 @@ for t in range(500):
             param -= learning_rate * param.grad
 
 ############ END DEEP LEARNING ########################
+
+y_pred_rect = toRectArray(y_pred.int())
+
+
+midiFunctions.createMidi(y_pred_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "y_pred_rect")
+
+mid = mido.MidiFile('midi/y_pred_rect.mid')
+
+playMidi(mid)
 
