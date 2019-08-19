@@ -151,7 +151,7 @@ noteArray_mario_square = toSquareArray(noteArray_mario)
 
 #print("squareArray: ", noteArray_mario_square)
 
-#noteArray_mario_rect = toRectArray(noteArray_mario_square)
+noteArray_mario_rect = toRectArray(noteArray_mario_square)
 
 #print("noteArray_mario: ", noteArray_mario)
 #print(noteArray_mario.shape)
@@ -160,10 +160,10 @@ noteArray_mario_square = toSquareArray(noteArray_mario)
 #print("noteArray_mario_rect: ", noteArray_mario_rect)
 #print(noteArray_mario_rect.shape)
 
-#midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
+midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
 
 #mid = mido.MidiFile('midi/new_song.mid')
-#mid = mido.MidiFile('midi/new_mario_rect.mid')
+mid = mido.MidiFile('midi/new_mario_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
 #mid = mido.MidiFile('midi/mario.mid')
 
@@ -179,11 +179,15 @@ H = 100
 
 
 # Create random Tensors to hold inputs and outputs
-x = torch.from_numpy(noteArray_square.astype("float")).float()
+#x = torch.from_numpy(noteArray_square.astype("float")).float()
+x = torch.randn(10, 10)
 y = torch.from_numpy(noteArray_mario_square.astype("float")).float()
 
+#x = x * (1./128)
+y = y * (1./128)
+
 D_in = x.size()[0]
-D_out = D_in
+D_out = y.size()[0]
 
 
 
@@ -201,7 +205,8 @@ model = torch.nn.Sequential(
 # case we will use Mean Squared Error (MSE) as our loss function.
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
-learning_rate = 1e-4
+#learning_rate = 0.0000005
+learning_rate = 0.0001
 for t in range(500):
     # Forward pass: compute predicted y by passing x to the model. Module objects
     # override the __call__ operator so you can call them like functions. When
@@ -231,6 +236,8 @@ for t in range(500):
             param -= learning_rate * param.grad
 
 ############ END DEEP LEARNING ########################
+
+y_pred = y_pred * 127
 
 y_pred_rect = toRectArray(y_pred.int())
 

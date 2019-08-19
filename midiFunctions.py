@@ -145,13 +145,16 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
                     
                     
                 if onOff == 1: 
-                    track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                    messageGenerated = True
+
+                    if noteValue >= 0 and noteValue <= 127: 
+                        track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                        messageGenerated = True
 
                 elif onOff == -1: 
-
-                    track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                    messageGenerated = True
+                    if noteValue >= 0 and noteValue <= 127: 
+                        
+                        track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                        messageGenerated = True
 
                 else: 
                     # onOff value is 0, don't do anything
