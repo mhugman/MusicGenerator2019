@@ -14,15 +14,18 @@ TEMPO = 850
 
 # Mario about 850 BPM
 
+# Calculate global parameter for square Matrix
+
+D = 0 
+
+while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
+
+    D += 1
+
 def toSquareArray(rectArray): 
 
     numChunks = int(math.ceil((SONG_LENGTH / NUM_TRACKS)))
 
-    D = 0 
-
-    while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
-
-        D += 1
     
     #print("numChunks: ", numChunks)
     #print("D: ", D)
@@ -62,12 +65,6 @@ def toSquareArray(rectArray):
 def toRectArray(squareArray):
 
     numChunks = int(math.ceil((SONG_LENGTH / NUM_TRACKS)))
-
-    D = 0 
-
-    while D ** 2 < SONG_LENGTH * NUM_TRACKS: 
-
-        D += 1
     
     #print("numChunks: ", numChunks)
     #print("D: ", D)
@@ -180,25 +177,25 @@ H = 100
 
 # Create random Tensors to hold inputs and outputs
 #x = torch.from_numpy(noteArray_square.astype("float")).float()
-x = torch.randn(10, 10)
+
+
+
+
+
+x = torch.randn(D, D)
 y = torch.from_numpy(noteArray_mario_square.astype("float")).float()
 
 #x = x * (1./128)
 y = y * (1./128)
-
-D_in = x.size()[0]
-D_out = y.size()[0]
-
-
 
 # Use the nn package to define our model as a sequence of layers. nn.Sequential
 # is a Module which contains other Modules, and applies them in sequence to
 # produce its output. Each Linear Module computes output from input using a
 # linear function, and holds internal Tensors for its weight and bias.
 model = torch.nn.Sequential(
-    torch.nn.Linear(D_in, H),
+    torch.nn.Linear(D, H),
     torch.nn.ReLU(),
-    torch.nn.Linear(H, D_out),
+    torch.nn.Linear(H, D),
 )
 
 # The nn package also contains definitions of popular loss functions; in this
@@ -207,7 +204,7 @@ loss_fn = torch.nn.MSELoss(reduction='sum')
 
 #learning_rate = 0.0000005
 learning_rate = 0.0001
-for t in range(500):
+for t in range(20000):
     # Forward pass: compute predicted y by passing x to the model. Module objects
     # override the __call__ operator so you can call them like functions. When
     # doing so you pass a Tensor of input data to the Module and it produces
