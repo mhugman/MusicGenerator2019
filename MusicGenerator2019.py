@@ -8,18 +8,21 @@ import datetime
 import midiFunctions
 
 np.set_printoptions(threshold=sys.maxsize)
+torch.set_printoptions(threshold=10000)
 
 
 ############ GLOBAL PARAMETERS ######################
 
 SONG_LENGTH = 120000 # About 120000 for mario
-NUM_TRACKS = 4
+NUM_TRACKS = 2
 TEMPO = 850 # mario about 850 BPM
 
-H = 100 # dimensions for hidden layer
-ITERATIONS = 1000
-LEARNING_RATE = 0.0001
-FILEPRE = "emulate_mario"
+H = 50 # dimensions for hidden layer
+ITERATIONS = 4000
+LEARNING_RATE_NOTE = 0.0001
+LEARNING_RATE_VEL = 0.0001
+LEARNING_RATE_ONOFF = 0.0000001
+FILEPRE = "emulate_test"
 FILEPOST = "all3"
 
 FILESOURCE = "mario"
@@ -185,7 +188,10 @@ onOffArray_source_square = toSquareArray(onOffArray_source)
 
 x_note = torch.randn(D, D)
 x_vel = torch.randn(D, D)
-x_onOff = torch.zeros(D, D) + 0.5
+#x_onOff = torch.zeros(D, D) + 0.5
+x_onOff = torch.randn(D, D)
+
+#print("x_onOff: ", x_onOff)
 
 #print("velocityArray_source: ", velocityArray_source)
 
@@ -195,11 +201,12 @@ y_note = torch.from_numpy(noteArray_source_square.astype("float")).float()
 y_vel = torch.from_numpy(velocityArray_source_square.astype("float")).float()
 y_onOff = torch.from_numpy(onOffArray_source_square.astype("float")).float()
 
-#print("y_vel: ", y_vel)
+
 
 #x = x * (1./128)
 y_note = y_note * (1./128)
 y_vel = y_vel * (1./128)
+y_onOff = y_onOff * 1000
 
 # Use the nn package to define our model as a sequence of layers. nn.Sequential
 # is a Module which contains other Modules, and applies them in sequence to
@@ -236,6 +243,8 @@ for t in range(ITERATIONS):
 
     #print(y_pred_onOff)
 
+
+
     loss_note = loss_fn(y_pred_note, y_note)
     loss_vel = loss_fn(y_pred_vel, y_vel)
     loss_onOff = loss_fn(y_pred_onOff, y_onOff)
@@ -249,7 +258,7 @@ for t in range(ITERATIONS):
     
     with torch.no_grad():
         for param in model_note.parameters():
-            param -= LEARNING_RATE * param.grad
+            param -= LEARNING_RATE_NOTE * param.grad
 
     model_vel.zero_grad()
 
@@ -258,7 +267,7 @@ for t in range(ITERATIONS):
     
     with torch.no_grad():
         for param in model_vel.parameters():
-            param -= LEARNING_RATE * param.grad
+            param -= LEARNING_RATE_VEL * param.grad
 
     model_onOff.zero_grad()
 
@@ -267,30 +276,35 @@ for t in range(ITERATIONS):
     
     with torch.no_grad():
         for param in model_onOff.parameters():
-            param -= LEARNING_RATE * param.grad
+            param -= LEARNING_RATE_ONOFF * param.grad
 
 ############ END DEEP LEARNING ########################
 
+print("onOffArray_source: ", onOffArray_source)
+
 y_pred_note = y_pred_note * 127
 y_pred_vel = y_pred_vel * 127
-#y_pred_onOff = y_pred_onOff + 0.6
+y_pred_onOff = y_pred_onOff * (1./ 1000) + 0.3
+print("y_pred_onOff: ", y_pred_onOff)
 
-#print(y_pred_onOff)
-
-#print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
+print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
 
 
 y_pred_note_rect = toRectArray(y_pred_note.int())
 y_pred_vel_rect = toRectArray(y_pred_vel.int())
 y_pred_onOff_rect = toRectArray(y_pred_onOff.round().int())
 
+print(np.where( onOffArray_source > 0 ))
 print(np.where( y_pred_onOff_rect > 0 ))
+#print(np.where( y_pred_onOff_rect > 0.3 ))
+#print(np.where( y_pred_onOff_rect > 0.5 ))
+#print(np.where( y_pred_onOff_rect > 0.7 ))
 
 #print("y_pred_note_rect: ", y_pred_note_rect)
 #print("y_pred_vel_rect: ", y_pred_vel_rect)
 #print("y_pred_onOff_rect: ", y_pred_onOff_rect)
 
-filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 
 midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
