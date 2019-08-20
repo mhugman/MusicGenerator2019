@@ -51,8 +51,10 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                         for j in range(0, deltaTime - 1): 
                             try:     
                                 noteArray[i][currentTime - 1 - j] = prevNotes[0][0]
+                                #print("filling in this note: ", prevNotes[0][0])
                                 velocityArray[i][currentTime - 1 - j] = prevNotes[0][1]
-                                velocityArray[i][currentTime - 1 - j] = prevNotes[0][2]
+                                #print("with this velocity: ", prevNotes[0][1])
+                                onOffArray[i][currentTime - 1 - j] = prevNotes[0][2]
                             except: 
                                 pass
                     
@@ -77,6 +79,9 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                         except: 
                             #raise ValueError(message, i, currentTime, currentNotes)
                             pass
+                    
+                    #print("noteArray: ", noteArray[:,:currentTime])
+                    #print("velocityArray: ", velocityArray[:,:currentTime])
 
 
                         
@@ -142,19 +147,34 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
                 onOff = onOffArray[i,j]
 
                 noteValue = noteArray[i,j]
+
+                if noteValue < 0 : 
+
+                    noteValue = 0 
+
+                elif noteValue > 127: 
+
+                    noteValue = 127
+
+                if noteVelocity < 0 : 
+
+                    noteVelocity = 0 
+
+                elif noteVelocity > 127: 
+
+                    noteVelocity = 127
                     
                     
-                if onOff == 1: 
+                if onOff > 0.6: 
 
-                    if noteValue >= 0 and noteValue <= 127: 
-                        track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                        messageGenerated = True
+                    track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    messageGenerated = True
 
-                elif onOff == -1: 
-                    if noteValue >= 0 and noteValue <= 127: 
-                        
-                        track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
-                        messageGenerated = True
+                elif onOff < -0.6: 
+                     
+
+                    track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    messageGenerated = True
 
                 else: 
                     # onOff value is 0, don't do anything

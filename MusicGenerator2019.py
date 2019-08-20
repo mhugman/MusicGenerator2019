@@ -12,15 +12,17 @@ np.set_printoptions(threshold=sys.maxsize)
 
 ############ GLOBAL PARAMETERS ######################
 
-SONG_LENGTH = 120000 # About 120000 for Mario
-NUM_TRACKS = 3
-TEMPO = 850 # Mario about 850 BPM
+SONG_LENGTH = 120000 # About 120000 for mario
+NUM_TRACKS = 4
+TEMPO = 850 # mario about 850 BPM
 
 H = 100 # dimensions for hidden layer
-ITERATIONS = 500
+ITERATIONS = 1000
 LEARNING_RATE = 0.0001
 FILEPRE = "emulate_mario"
-FILEPOST = "a"
+FILEPOST = "all3"
+
+FILESOURCE = "mario"
 
 # Calculate global parameter for square Matrix
 
@@ -134,38 +136,38 @@ noteArray_square = toSquareArray(noteArray)
 
 midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
 
-noteArray_mario = np.zeros(noteArray.shape).astype("int")
-velocityArray_mario = np.zeros(noteArray.shape).astype("int")
-onOffArray_mario = np.zeros(noteArray.shape).astype("int")
+noteArray_source = np.zeros(noteArray.shape).astype("int")
+velocityArray_source = np.zeros(noteArray.shape).astype("int")
+onOffArray_source = np.zeros(noteArray.shape).astype("int")
 
 #print("note Array shape: ", noteArray.shape)
-#print("note Array mario shape: ", noteArray_mario.shape)
+#print("note Array source shape: ", noteArray_source.shape)
 
-noteArray_mario, velocityArray_mario, onOffArray_mario = midiFunctions.parseMidi(noteArray_mario, velocityArray_mario, onOffArray_mario, mido.MidiFile('midi/mario.mid'))
+noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(noteArray_source, velocityArray_source, onOffArray_source, mido.MidiFile('midi/' + FILESOURCE + '.mid'))
 
-noteArray_mario_square = toSquareArray(noteArray_mario)
+noteArray_source_square = toSquareArray(noteArray_source)
 
-velocityArray_mario_square = toSquareArray(velocityArray_mario)
+velocityArray_source_square = toSquareArray(velocityArray_source)
 
-onOffArray_mario_square = toSquareArray(onOffArray_mario)
+onOffArray_source_square = toSquareArray(onOffArray_source)
 
-#print("squareArray: ", noteArray_mario_square)
+#print("squareArray: ", noteArray_source_square)
 
-#noteArray_mario_rect = toRectArray(noteArray_mario_square)
+#noteArray_source_rect = toRectArray(noteArray_source_square)
 
-#print("noteArray_mario: ", noteArray_mario)
-#print(noteArray_mario.shape)
-#print("noteArray_mario_square: ", noteArray_mario_square)
-#print(noteArray_mario_square.shape)
-#print("noteArray_mario_rect: ", noteArray_mario_rect)
-#print(noteArray_mario_rect.shape)
+#print("noteArray_source: ", noteArray_source)
+#print(noteArray_source.shape)
+#print("noteArray_source_square: ", noteArray_source_square)
+#print(noteArray_source_square.shape)
+#print("noteArray_source_rect: ", noteArray_source_rect)
+#print(noteArray_source_rect.shape)
 
-#midiFunctions.createMidi(noteArray_mario_rect, velocityArray_mario, onOffArray_mario, int(round(60000000 / TEMPO)), "new_mario_rect")
+#midiFunctions.createMidi(noteArray_source_rect, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "new_source_rect")
 
 #mid = mido.MidiFile('midi/new_song.mid')
-#mid = mido.MidiFile('midi/new_mario_rect.mid')
+#mid = mido.MidiFile('midi/new_source_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
-#mid = mido.MidiFile('midi/mario.mid')
+#mid = mido.MidiFile('midi/source.mid')
 
 #playMidi(mid)
 
@@ -175,7 +177,7 @@ onOffArray_mario_square = toSquareArray(onOffArray_mario)
 
 # source: https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 
-
+#print("onOffArray_source:", onOffArray_source)
 
 
 # Create random Tensors to hold inputs and outputs
@@ -183,17 +185,17 @@ onOffArray_mario_square = toSquareArray(onOffArray_mario)
 
 x_note = torch.randn(D, D)
 x_vel = torch.randn(D, D)
-x_onOff = torch.randn(D, D)
+x_onOff = torch.zeros(D, D) + 0.5
 
-print("velocityArray_mario_square: ", velocityArray_mario_square)
+#print("velocityArray_source: ", velocityArray_source)
 
-y_note = torch.from_numpy(noteArray_mario_square.astype("float")).float()
-y_vel = torch.from_numpy(velocityArray_mario_square.astype("float")).float()
-y_onOff = torch.from_numpy(onOffArray_mario_square.astype("float")).float()
+#print("velocityArray_source_square: ", velocityArray_source_square)
 
-print("y_vel: ", y_vel)
+y_note = torch.from_numpy(noteArray_source_square.astype("float")).float()
+y_vel = torch.from_numpy(velocityArray_source_square.astype("float")).float()
+y_onOff = torch.from_numpy(onOffArray_source_square.astype("float")).float()
 
-raise ValueError(234)
+#print("y_vel: ", y_vel)
 
 #x = x * (1./128)
 y_note = y_note * (1./128)
@@ -232,13 +234,13 @@ for t in range(ITERATIONS):
     y_pred_vel = model_vel(x_vel)
     y_pred_onOff = model_onOff(x_onOff)
 
-    print(y_pred_vel)
+    #print(y_pred_onOff)
 
     loss_note = loss_fn(y_pred_note, y_note)
     loss_vel = loss_fn(y_pred_vel, y_vel)
     loss_onOff = loss_fn(y_pred_onOff, y_onOff)
 
-    print(t, loss_note.item())
+    print(t, loss_note.item(), loss_vel.item(), loss_onOff.item())
 
     model_note.zero_grad()
 
@@ -271,10 +273,18 @@ for t in range(ITERATIONS):
 
 y_pred_note = y_pred_note * 127
 y_pred_vel = y_pred_vel * 127
+#y_pred_onOff = y_pred_onOff + 0.6
+
+#print(y_pred_onOff)
+
+#print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
+
 
 y_pred_note_rect = toRectArray(y_pred_note.int())
 y_pred_vel_rect = toRectArray(y_pred_vel.int())
-y_pred_onOff_rect = toRectArray(y_pred_onOff.int())
+y_pred_onOff_rect = toRectArray(y_pred_onOff.round().int())
+
+print(np.where( y_pred_onOff_rect > 0 ))
 
 #print("y_pred_note_rect: ", y_pred_note_rect)
 #print("y_pred_vel_rect: ", y_pred_vel_rect)
@@ -283,7 +293,7 @@ y_pred_onOff_rect = toRectArray(y_pred_onOff.int())
 filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 
-midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, onOffArray_mario, int(round(60000000 / TEMPO)), filename )
+midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
 
 mid = mido.MidiFile('midi/' + filename + '.mid')
 
