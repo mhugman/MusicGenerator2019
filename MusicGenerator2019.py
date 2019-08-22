@@ -19,12 +19,19 @@ NUM_MIDI_TRACKS = 3
 NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
 TEMPO = 220 # mario about 850 BPM
 
+LEARN_NOTES = True
+LEARN_VEL = False
+LEARN_ONOFF = True
 
-H = 400 # dimensions for hidden layer
-ITERATIONS = 2000
-LEARNING_RATE_NOTE = 0.0001
-LEARNING_RATE_VEL = 0.00001
-LEARNING_RATE_ONOFF = 0.0000001
+
+H = 600 # dimensions for hidden layer
+ITERATIONS = 100
+LEARNING_RATE_NOTE = 5e-5 # 1e-4 for mario
+LEARNING_RATE_VEL = 1e-5 # 1e-4 for mario
+LEARNING_RATE_ONOFF = 1e-7
+
+alpha = 0.99
+
 FILEPRE = "generated_midi/emulate_masterofpuppets"
 FILEPOST = "firsttry"
 
@@ -125,7 +132,7 @@ def toRectArray(squareArray):
 def playMidi(mid): 
     
     for message in mid.play():
-        print(message)
+        #print(message)
         outport.send(message)
 
 
@@ -138,23 +145,13 @@ onOffArray = np.random.randint(-1, 2, size=(NUM_TRACKS, SONG_LENGTH))
 
 noteArray_square = toSquareArray(noteArray)
 
-#print("noteArray: ", noteArray)
-
-
-midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
-
-
-
-#print("note Array shape: ", noteArray.shape)
-#print("note Array source shape: ", noteArray_source.shape)
-
-#timeMultiple = midiFunctions.findTimeMultiple(mido.MidiFile('midi/' + FILESOURCE + '.mid'))
-
-#print("timeMultiple: ", timeMultiple)
-
-#raise ValueError(2345345)
+#midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
 
 noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(mido.MidiFile('midi/' + FILESOURCE + '.mid'))
+
+#print("noteArray_source: ", noteArray_source)
+#print("velocityArray_source: ", velocityArray_source)
+#print("onOffArray_source: ", onOffArray_source)
 
 noteArray_source_square = toSquareArray(noteArray_source)
 
@@ -162,32 +159,13 @@ velocityArray_source_square = toSquareArray(velocityArray_source)
 
 onOffArray_source_square = toSquareArray(onOffArray_source)
 
-#print("squareArray: ", noteArray_source_square)
+midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "parsed_" + FILESOURCE)
 
-#noteArray_source_rect = toRectArray(noteArray_source_square)
+#mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
 
-#print("noteArray_source: ", noteArray_source)
-#print(noteArray_source.shape)
-#print("noteArray_source_square: ", noteArray_source_square)
-#print(noteArray_source_square.shape)
-#print("noteArray_source_rect: ", noteArray_source_rect)
-#print(noteArray_source_rect.shape)
-
-midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "new_song")
-
-#mid = mido.MidiFile('midi/masterofpuppets_b.mid')
-#mid = mido.MidiFile('midi/new_source_rect.mid')
-mid = mido.MidiFile('midi/new_song.mid')
-#mid = mido.MidiFile('midi/mario.mid')
-
-playMidi(mid)
+#playMidi(mid)
 
 #raise ValueError(234234)
-
-#print("noteArray_source: ", noteArray_source)
-#print("onOffArray_source: ", onOffArray_source)
-
-raise ValueError(235)
 
 
 
@@ -203,30 +181,18 @@ raise ValueError(235)
 
 x_note = torch.randn(D, D)
 x_vel = torch.randn(D, D)
-#x_onOff = torch.zeros(D, D) + 0.5
 x_onOff = torch.randn(D, D)
 
-#print("x_onOff: ", x_onOff)
-
-#print("velocityArray_source: ", velocityArray_source)
-
-#print("velocityArray_source_square: ", velocityArray_source_square)
 
 y_note = torch.from_numpy(noteArray_source_square.astype("float")).float()
 y_vel = torch.from_numpy(velocityArray_source_square.astype("float")).float()
 y_onOff = torch.from_numpy(onOffArray_source_square.astype("float")).float()
 
-
-
-#x = x * (1./128)
 y_note = y_note * (1./128)
 y_vel = y_vel * (1./128)
 y_onOff = y_onOff * 1000
 
-# Use the nn package to define our model as a sequence of layers. nn.Sequential
-# is a Module which contains other Modules, and applies them in sequence to
-# produce its output. Each Linear Module computes output from input using a
-# linear function, and holds internal Tensors for its weight and bias.
+
 model_note = torch.nn.Sequential(
     torch.nn.Linear(D, H),
     torch.nn.ReLU(),
@@ -245,87 +211,142 @@ model_onOff = torch.nn.Sequential(
     torch.nn.Linear(H, D),
 )
 
-# The nn package also contains definitions of popular loss functions; in this
-# case we will use Mean Squared Error (MSE) as our loss function.
+
 loss_fn = torch.nn.MSELoss(reduction='sum')
+
+learning_rate_note = LEARNING_RATE_NOTE
+learning_rate_vel = LEARNING_RATE_VEL
+learning_rate_onoff = LEARNING_RATE_ONOFF
+
+loss_note_val = 0.
+loss_vel_val = 0.
+loss_onOff_val = 0.
 
 
 for t in range(ITERATIONS):
-
-    y_pred_note = model_note(x_note)
-    y_pred_vel = model_vel(x_vel)
-    y_pred_onOff = model_onOff(x_onOff)
-
-    #print(y_pred_onOff)
-
-
-
-    loss_note = loss_fn(y_pred_note, y_note)
-    loss_vel = loss_fn(y_pred_vel, y_vel)
-    loss_onOff = loss_fn(y_pred_onOff, y_onOff)
-
-    print(t, loss_note.item(), loss_vel.item(), loss_onOff.item())
-
-    model_note.zero_grad()
-
-    loss_note.backward()
-
     
-    with torch.no_grad():
-        for param in model_note.parameters():
-            param -= LEARNING_RATE_NOTE * param.grad
+    if LEARN_NOTES: 
 
-    model_vel.zero_grad()
+        y_pred_note = model_note(x_note)
+        loss_note = loss_fn(y_pred_note, y_note)
 
-    loss_vel.backward()
+        loss_note_val =  loss_note.item()
 
-    
-    with torch.no_grad():
-        for param in model_vel.parameters():
-            param -= LEARNING_RATE_VEL * param.grad
+        model_note.zero_grad()
 
-    model_onOff.zero_grad()
+        loss_note.backward()
 
-    loss_onOff.backward()
+        
+        with torch.no_grad():
+            for param in model_note.parameters():
+                param -= learning_rate_note * param.grad
 
-    
-    with torch.no_grad():
-        for param in model_onOff.parameters():
-            param -= LEARNING_RATE_ONOFF * param.grad
+
+
+    if LEARN_VEL: 
+
+        y_pred_vel = model_vel(x_vel)
+        loss_vel = loss_fn(y_pred_vel, y_vel)
+
+        loss_vel_val =  loss_vel.item()
+
+        model_vel.zero_grad()
+
+        loss_vel.backward()
+
+        
+        with torch.no_grad():
+            for param in model_vel.parameters():
+                param -= learning_rate_vel * param.grad
+
+    if LEARN_ONOFF: 
+
+        y_pred_onOff = model_onOff(x_onOff)
+
+        loss_onOff = loss_fn(y_pred_onOff, y_onOff)
+
+        loss_onOff_val =  loss_onOff.item()
+
+        model_onOff.zero_grad()
+
+        loss_onOff.backward()
+
+        
+        with torch.no_grad():
+            for param in model_onOff.parameters():
+                param -= learning_rate_onoff * param.grad
+
+
+    print(t, loss_note_val, "   ", loss_vel_val, "    ", loss_onOff_val)
+
+    if t % 100 == 0 : 
+        learning_rate_note = alpha * learning_rate_note
+        learning_rate_vel = alpha * learning_rate_vel
+        learning_rate_onoff = alpha * learning_rate_onoff
+
 
 ############ END DEEP LEARNING ########################
 
-#print("onOffArray_source: ", onOffArray_source)
+#
 
-y_pred_note = y_pred_note * 127
-y_pred_vel = y_pred_vel * 127
-y_pred_onOff = y_pred_onOff * (1./ 1000)
-#print("y_pred_onOff: ", y_pred_onOff)
+if LEARN_NOTES: 
 
-#print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
+    y_pred_note = y_pred_note * 127
+    y_pred_note_rect = toRectArray(y_pred_note.int())
+
+if LEARN_VEL: 
+
+    y_pred_vel = y_pred_vel * 127
+    y_pred_vel_rect = toRectArray(y_pred_vel.int())
 
 
-y_pred_note_rect = toRectArray(y_pred_note.int())
-y_pred_vel_rect = toRectArray(y_pred_vel.int())
-y_pred_onOff_rect = toRectArray(y_pred_onOff.round().int())
+if LEARN_ONOFF: 
+    y_pred_onOff = y_pred_onOff * (1./ 1000)
+    y_pred_onOff_rect = toRectArray(y_pred_onOff.round().int())
 
-print("source > 0: ", np.where( onOffArray_source > 0 ), np.where( onOffArray_source > 0 )[0].shape)
-print("learned > 0: ", np.where( y_pred_onOff_rect > 0 ), np.where( y_pred_onOff_rect > 0 )[0].shape)
-#print(np.where( y_pred_onOff_rect > 0.3 ))
-#print(np.where( y_pred_onOff_rect > 0.5 ))
-#print(np.where( y_pred_onOff_rect > 0.7 ))
 
-#print("y_pred_note_rect: ", y_pred_note_rect)
-#print("y_pred_vel_rect: ", y_pred_vel_rect)
-#print("y_pred_onOff_rect: ", y_pred_onOff_rect)
+    print("source > 0: ",  np.where( onOffArray_source > 0 )[0].shape)
+    print("learned > 0: ", np.where( y_pred_onOff_rect > 0 )[0].shape)
 
-filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_" + str(H) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-#midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), filename )
-midiFunctions.createMidi(noteArray_source, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
-#midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
+# "_lossnote_" + str(round(loss_note_val, 2)) + "_lossvel_" + str(round(loss_vel_val, 2)) +  "_lossonOff_" + str(round(loss_onOff_val, 2)) +
+filename = FILEPRE +  "_itr_" + str(ITERATIONS) + "_alpha_" + str(alpha) + "_learningrates_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_H_" + str(H) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d__%H-%M-%S")
 
-mid = mido.MidiFile('midi/' + filename + '.mid')
+#midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), filename + "_nolearning" )
 
-playMidi(mid)
+if LEARN_NOTES and not LEARN_VEL and not LEARN_ONOFF: 
+
+    midiFunctions.createMidi(y_pred_note_rect, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), filename + "_learnnotesonly" )
+
+    mid = mido.MidiFile("midi/" + filename + "_learnnotesonly" + '.mid')
+
+    playMidi(mid)
+
+elif LEARN_ONOFF and not LEARN_NOTES and not LEARN_VEL: 
+
+    midiFunctions.createMidi(noteArray_source, velocityArray_source, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename + "_learnonoffonly"  )
+
+    mid = mido.MidiFile("midi/" + filename + "_learnonoffonly" + '.mid')
+
+    playMidi(mid)
+
+elif LEARN_NOTES and LEARN_VEL and LEARN_ONOFF: 
+
+    midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename + "_learnall3"  )
+
+    mid = mido.MidiFile("midi/" + filename + "_learnall3" + '.mid')
+
+    playMidi(mid)
+
+elif LEARN_NOTES and not LEARN_VEL and LEARN_ONOFF :
+
+    midiFunctions.createMidi(noteArray_source, velocityArray_source, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename + "_nolearnvel"  )
+
+    mid = mido.MidiFile("midi/" + filename + "_nolearnvel" + '.mid')
+
+    playMidi(mid)
+
+else: 
+
+    print("didn't configure that option")
 

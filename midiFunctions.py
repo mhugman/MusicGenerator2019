@@ -7,7 +7,7 @@ from mido.midifiles import MidiTrack
 from mido import MetaMessage
 from mido import Message
 
-MAX_SUSTAIN = 5 # maximum time to sustain a note before it gets removed
+MAX_SUSTAIN = 20 # maximum time to sustain a note before it gets removed
 MIN_LENGTH = 100
 
 SONG_LENGTH = 60000 # About 120000 for mario
@@ -272,7 +272,7 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
                     # if there was no message, simply increment the time since the last message
                     timeSinceLastMessage = timeSinceLastMessage + 1
 
-        mid.save('midi/' + filename + '.mid')
+        mid.save("midi/" +  filename + '.mid')
 
 
 
