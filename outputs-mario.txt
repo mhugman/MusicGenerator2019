@@ -1,0 +1,3886 @@
+message:  <meta message time_signature numerator=4 denominator=4 clocks_per_click=24 notated_32nd_notes_per_beat=8 time=0>
+message:  <meta message key_signature key='C' time=0>
+message:  <meta message set_tempo tempo=272727 time=0>
+message:  control_change channel=3 control=121 value=0 time=0
+message:  program_change channel=3 program=27 time=0
+message:  control_change channel=3 control=7 value=119 time=0
+message:  control_change channel=3 control=10 value=64 time=0
+message:  control_change channel=3 control=91 value=0 time=0
+message:  control_change channel=3 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=3 note=40 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=3 note=52 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=3 note=59 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  control_change channel=0 control=121 value=0 time=0
+message:  program_change channel=0 program=31 time=0
+message:  control_change channel=0 control=7 value=100 time=0
+message:  control_change channel=0 control=10 value=64 time=0
+message:  control_change channel=0 control=91 value=0 time=0
+message:  control_change channel=0 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=1 control=121 value=0 time=0
+message:  program_change channel=1 program=30 time=0
+message:  control_change channel=1 control=7 value=100 time=0
+message:  control_change channel=1 control=10 value=64 time=0
+message:  control_change channel=1 control=91 value=0 time=0
+message:  control_change channel=1 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=2 control=121 value=0 time=0
+message:  program_change channel=2 program=29 time=0
+message:  control_change channel=2 control=7 value=100 time=0
+message:  control_change channel=2 control=10 value=64 time=0
+message:  control_change channel=2 control=91 value=0 time=0
+message:  control_change channel=2 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=6 control=121 value=0 time=0
+message:  program_change channel=6 program=28 time=0
+message:  control_change channel=6 control=7 value=100 time=0
+message:  control_change channel=6 control=10 value=64 time=0
+message:  control_change channel=6 control=91 value=0 time=0
+message:  control_change channel=6 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=8 control=121 value=0 time=0
+message:  program_change channel=8 program=26 time=0
+message:  control_change channel=8 control=7 value=100 time=0
+message:  control_change channel=8 control=10 value=64 time=0
+message:  control_change channel=8 control=91 value=0 time=0
+message:  control_change channel=8 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=3 note=40 velocity=0 time=479
+prevTime:  0
+currentTime:  479
+message:  note_on channel=3 note=52 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=3 note=59 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=3 note=50 velocity=127 time=1441
+prevTime:  479
+currentTime:  1920
+message:  note_on channel=3 note=57 velocity=127 time=0
+prevTime:  1920
+currentTime:  1920
+message:  note_on channel=3 note=62 velocity=127 time=0
+prevTime:  1920
+currentTime:  1920
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  1920
+currentTime:  2399
+message:  note_on channel=3 note=57 velocity=0 time=0
+prevTime:  2399
+currentTime:  2399
+message:  note_on channel=3 note=62 velocity=0 time=0
+prevTime:  2399
+currentTime:  2399
+message:  note_on channel=3 note=50 velocity=127 time=1
+prevTime:  2399
+currentTime:  2400
+message:  note_on channel=3 note=56 velocity=127 time=0
+prevTime:  2400
+currentTime:  2400
+message:  note_on channel=3 note=61 velocity=127 time=0
+prevTime:  2400
+currentTime:  2400
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  2400
+currentTime:  2879
+message:  note_on channel=3 note=56 velocity=0 time=0
+prevTime:  2879
+currentTime:  2879
+message:  note_on channel=3 note=61 velocity=0 time=0
+prevTime:  2879
+currentTime:  2879
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  2879
+currentTime:  2880
+message:  note_on channel=3 note=55 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=3 note=60 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=3 note=48 velocity=0 time=2399
+prevTime:  2880
+currentTime:  5279
+message:  note_on channel=3 note=55 velocity=0 time=0
+prevTime:  5279
+currentTime:  5279
+message:  note_on channel=3 note=60 velocity=0 time=0
+prevTime:  5279
+currentTime:  5279
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  5279
+currentTime:  5279
+message:  note_on channel=3 note=40 velocity=127 time=481
+prevTime:  5279
+currentTime:  5760
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  5760
+currentTime:  5999
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  5999
+currentTime:  6000
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  6000
+currentTime:  6239
+message:  note_on channel=3 note=52 velocity=127 time=1
+prevTime:  6239
+currentTime:  6240
+message:  note_on channel=3 note=52 velocity=0 time=239
+prevTime:  6240
+currentTime:  6479
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  6479
+currentTime:  6480
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  6480
+currentTime:  6719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  6719
+currentTime:  6720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  6720
+currentTime:  6959
+message:  note_on channel=3 note=51 velocity=127 time=1
+prevTime:  6959
+currentTime:  6960
+message:  note_on channel=3 note=51 velocity=0 time=239
+prevTime:  6960
+currentTime:  7199
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  7199
+currentTime:  7200
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  7200
+currentTime:  7439
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  7439
+currentTime:  7440
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  7440
+currentTime:  7679
+message:  note_on channel=3 note=50 velocity=127 time=1
+prevTime:  7679
+currentTime:  7680
+message:  note_on channel=3 note=57 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=3 note=62 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=3 note=66 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  7680
+currentTime:  8159
+message:  note_on channel=3 note=57 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=3 note=62 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=3 note=66 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  8159
+currentTime:  8160
+message:  note_on channel=3 note=56 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=3 note=61 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=3 note=65 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=3 note=49 velocity=0 time=479
+prevTime:  8160
+currentTime:  8639
+message:  note_on channel=3 note=56 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=3 note=61 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=3 note=65 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  8639
+currentTime:  8640
+message:  note_on channel=3 note=55 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=3 note=60 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=3 note=48 velocity=0 time=959
+prevTime:  8640
+currentTime:  9599
+message:  note_on channel=3 note=55 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=3 note=60 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  9599
+currentTime:  9600
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  9600
+currentTime:  9839
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  9839
+currentTime:  9840
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  9840
+currentTime:  10079
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  10079
+currentTime:  10080
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  10080
+currentTime:  10319
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  10319
+currentTime:  10320
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  10320
+currentTime:  10559
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  10559
+currentTime:  10560
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  10560
+currentTime:  10799
+message:  note_on channel=3 note=46 velocity=127 time=1
+prevTime:  10799
+currentTime:  10800
+message:  note_on channel=3 note=46 velocity=0 time=239
+prevTime:  10800
+currentTime:  11039
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  11039
+currentTime:  11040
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  11040
+currentTime:  11279
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  11279
+currentTime:  11280
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  11280
+currentTime:  11519
+message:  note_on channel=3 note=45 velocity=127 time=1
+prevTime:  11519
+currentTime:  11520
+message:  note_on channel=3 note=45 velocity=0 time=239
+prevTime:  11520
+currentTime:  11759
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  11759
+currentTime:  11760
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  11760
+currentTime:  11999
+message:  note_on channel=3 note=44 velocity=127 time=1
+prevTime:  11999
+currentTime:  12000
+message:  note_on channel=3 note=44 velocity=0 time=239
+prevTime:  12000
+currentTime:  12239
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  12239
+currentTime:  12240
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  12240
+currentTime:  12479
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  12479
+currentTime:  12480
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  12480
+currentTime:  12719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  12719
+currentTime:  12720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  12720
+currentTime:  12959
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  12959
+currentTime:  12960
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  12960
+currentTime:  13199
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  13199
+currentTime:  13200
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  13200
+currentTime:  13439
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  13439
+currentTime:  13440
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  13440
+currentTime:  13679
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  13679
+currentTime:  13680
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  13680
+currentTime:  13919
+message:  note_on channel=3 note=52 velocity=127 time=1
+prevTime:  13919
+currentTime:  13920
+message:  note_on channel=3 note=52 velocity=0 time=239
+prevTime:  13920
+currentTime:  14159
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  14159
+currentTime:  14160
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  14160
+currentTime:  14399
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  14399
+currentTime:  14400
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  14400
+currentTime:  14639
+message:  note_on channel=3 note=51 velocity=127 time=1
+prevTime:  14639
+currentTime:  14640
+message:  note_on channel=3 note=51 velocity=0 time=239
+prevTime:  14640
+currentTime:  14879
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  14879
+currentTime:  14880
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  14880
+currentTime:  15119
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  15119
+currentTime:  15120
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  15120
+currentTime:  15359
+message:  note_on channel=3 note=50 velocity=127 time=1
+prevTime:  15359
+currentTime:  15360
+message:  note_on channel=3 note=57 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=3 note=62 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=3 note=66 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  15360
+currentTime:  15839
+message:  note_on channel=3 note=57 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=3 note=62 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=3 note=66 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  15839
+currentTime:  15840
+message:  note_on channel=3 note=56 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=3 note=61 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=3 note=65 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=3 note=49 velocity=0 time=479
+prevTime:  15840
+currentTime:  16319
+message:  note_on channel=3 note=56 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=3 note=61 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=3 note=65 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  16319
+currentTime:  16320
+message:  note_on channel=3 note=55 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=3 note=60 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=3 note=48 velocity=0 time=959
+prevTime:  16320
+currentTime:  17279
+message:  note_on channel=3 note=55 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=3 note=60 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  17279
+currentTime:  17280
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  17280
+currentTime:  17519
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  17519
+currentTime:  17520
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  17520
+currentTime:  17759
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  17759
+currentTime:  17760
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  17760
+currentTime:  17999
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  17999
+currentTime:  18000
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  18000
+currentTime:  18239
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  18239
+currentTime:  18240
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  18240
+currentTime:  18479
+message:  note_on channel=3 note=46 velocity=127 time=1
+prevTime:  18479
+currentTime:  18480
+message:  note_on channel=3 note=46 velocity=0 time=239
+prevTime:  18480
+currentTime:  18719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  18719
+currentTime:  18720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  18720
+currentTime:  18959
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  18959
+currentTime:  18960
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  18960
+currentTime:  19199
+message:  note_on channel=3 note=45 velocity=127 time=1
+prevTime:  19199
+currentTime:  19200
+message:  note_on channel=3 note=45 velocity=0 time=239
+prevTime:  19200
+currentTime:  19439
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  19439
+currentTime:  19440
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  19440
+currentTime:  19679
+message:  note_on channel=3 note=44 velocity=127 time=1
+prevTime:  19679
+currentTime:  19680
+message:  note_on channel=3 note=44 velocity=0 time=239
+prevTime:  19680
+currentTime:  19919
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  19919
+currentTime:  19920
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  19920
+currentTime:  20159
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  20159
+currentTime:  20160
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  20160
+currentTime:  20399
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  20399
+currentTime:  20400
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  20400
+currentTime:  20639
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  20639
+currentTime:  20640
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  20640
+currentTime:  20879
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  20879
+currentTime:  20880
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  20880
+currentTime:  21119
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  21119
+currentTime:  21120
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  21120
+currentTime:  21359
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  21359
+currentTime:  21360
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  21360
+currentTime:  21599
+message:  note_on channel=3 note=52 velocity=127 time=1
+prevTime:  21599
+currentTime:  21600
+message:  note_on channel=3 note=52 velocity=0 time=239
+prevTime:  21600
+currentTime:  21839
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  21839
+currentTime:  21840
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  21840
+currentTime:  22079
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  22079
+currentTime:  22080
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  22080
+currentTime:  22319
+message:  note_on channel=3 note=51 velocity=127 time=1
+prevTime:  22319
+currentTime:  22320
+message:  note_on channel=3 note=51 velocity=0 time=239
+prevTime:  22320
+currentTime:  22559
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  22559
+currentTime:  22560
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  22560
+currentTime:  22799
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  22799
+currentTime:  22800
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  22800
+currentTime:  23039
+message:  note_on channel=3 note=50 velocity=127 time=1
+prevTime:  23039
+currentTime:  23040
+message:  note_on channel=3 note=57 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=3 note=62 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=3 note=66 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  23040
+currentTime:  23519
+message:  note_on channel=3 note=57 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=3 note=62 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=3 note=66 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  23519
+currentTime:  23520
+message:  note_on channel=3 note=56 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=3 note=61 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=3 note=65 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=3 note=49 velocity=0 time=479
+prevTime:  23520
+currentTime:  23999
+message:  note_on channel=3 note=56 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=3 note=61 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=3 note=65 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  23999
+currentTime:  24000
+message:  note_on channel=3 note=55 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=3 note=60 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=3 note=48 velocity=0 time=959
+prevTime:  24000
+currentTime:  24959
+message:  note_on channel=3 note=55 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=3 note=60 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  24959
+currentTime:  24960
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  24960
+currentTime:  25199
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  25199
+currentTime:  25200
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  25200
+currentTime:  25439
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  25439
+currentTime:  25440
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  25440
+currentTime:  25679
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  25679
+currentTime:  25680
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  25680
+currentTime:  25919
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  25919
+currentTime:  25920
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  25920
+currentTime:  26159
+message:  note_on channel=3 note=46 velocity=127 time=1
+prevTime:  26159
+currentTime:  26160
+message:  note_on channel=3 note=46 velocity=0 time=239
+prevTime:  26160
+currentTime:  26399
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  26399
+currentTime:  26400
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  26400
+currentTime:  26639
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  26639
+currentTime:  26640
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  26640
+currentTime:  26879
+message:  note_on channel=3 note=45 velocity=127 time=1
+prevTime:  26879
+currentTime:  26880
+message:  note_on channel=3 note=45 velocity=0 time=239
+prevTime:  26880
+currentTime:  27119
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  27119
+currentTime:  27120
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  27120
+currentTime:  27359
+message:  note_on channel=3 note=44 velocity=127 time=1
+prevTime:  27359
+currentTime:  27360
+message:  note_on channel=3 note=44 velocity=0 time=239
+prevTime:  27360
+currentTime:  27599
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  27599
+currentTime:  27600
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  27600
+currentTime:  27839
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  27839
+currentTime:  27840
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  27840
+currentTime:  28079
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  28079
+currentTime:  28080
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  28080
+currentTime:  28319
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  28319
+currentTime:  28320
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  28320
+currentTime:  28559
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  28559
+currentTime:  28560
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  28560
+currentTime:  28799
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  28799
+currentTime:  28800
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  28800
+currentTime:  29039
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  29039
+currentTime:  29040
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  29040
+currentTime:  29279
+message:  note_on channel=3 note=52 velocity=127 time=1
+prevTime:  29279
+currentTime:  29280
+message:  note_on channel=3 note=52 velocity=0 time=239
+prevTime:  29280
+currentTime:  29519
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  29519
+currentTime:  29520
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  29520
+currentTime:  29759
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  29759
+currentTime:  29760
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  29760
+currentTime:  29999
+message:  note_on channel=3 note=51 velocity=127 time=1
+prevTime:  29999
+currentTime:  30000
+message:  note_on channel=3 note=51 velocity=0 time=239
+prevTime:  30000
+currentTime:  30239
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  30239
+currentTime:  30240
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  30240
+currentTime:  30479
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  30479
+currentTime:  30480
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  30480
+currentTime:  30719
+message:  note_on channel=3 note=50 velocity=127 time=1
+prevTime:  30719
+currentTime:  30720
+message:  note_on channel=3 note=57 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=3 note=62 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=3 note=66 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=3 note=50 velocity=0 time=479
+prevTime:  30720
+currentTime:  31199
+message:  note_on channel=3 note=57 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=3 note=62 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=3 note=66 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  31199
+currentTime:  31200
+message:  note_on channel=3 note=56 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=3 note=61 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=3 note=65 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=3 note=49 velocity=0 time=479
+prevTime:  31200
+currentTime:  31679
+message:  note_on channel=3 note=56 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=3 note=61 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=3 note=65 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  31679
+currentTime:  31680
+message:  note_on channel=3 note=55 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=3 note=60 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=3 note=64 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=3 note=48 velocity=0 time=959
+prevTime:  31680
+currentTime:  32639
+message:  note_on channel=3 note=55 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=3 note=60 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=3 note=64 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  32639
+currentTime:  32640
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  32640
+currentTime:  32879
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  32879
+currentTime:  32880
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  32880
+currentTime:  33119
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  33119
+currentTime:  33120
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  33120
+currentTime:  33359
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  33359
+currentTime:  33360
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  33360
+currentTime:  33599
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  33599
+currentTime:  33600
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  33600
+currentTime:  33839
+message:  note_on channel=3 note=46 velocity=127 time=1
+prevTime:  33839
+currentTime:  33840
+message:  note_on channel=3 note=46 velocity=0 time=239
+prevTime:  33840
+currentTime:  34079
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  34079
+currentTime:  34080
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  34080
+currentTime:  34319
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  34319
+currentTime:  34320
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  34320
+currentTime:  34559
+message:  note_on channel=3 note=45 velocity=127 time=1
+prevTime:  34559
+currentTime:  34560
+message:  note_on channel=3 note=45 velocity=0 time=239
+prevTime:  34560
+currentTime:  34799
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  34799
+currentTime:  34800
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  34800
+currentTime:  35039
+message:  note_on channel=3 note=44 velocity=127 time=1
+prevTime:  35039
+currentTime:  35040
+message:  note_on channel=3 note=44 velocity=0 time=239
+prevTime:  35040
+currentTime:  35279
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  35279
+currentTime:  35280
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  35280
+currentTime:  35519
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  35519
+currentTime:  35520
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  35520
+currentTime:  35759
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  35759
+currentTime:  35760
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  35760
+currentTime:  35999
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  35999
+currentTime:  36000
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  36000
+currentTime:  36239
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  36239
+currentTime:  36240
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  36240
+currentTime:  36479
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  36479
+currentTime:  36480
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  36480
+currentTime:  36719
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  36719
+currentTime:  36720
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  36720
+currentTime:  36959
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  36959
+currentTime:  36960
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  36960
+currentTime:  37199
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  37199
+currentTime:  37200
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  37200
+currentTime:  37439
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  37439
+currentTime:  37440
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  37440
+currentTime:  37679
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  37679
+currentTime:  37680
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  37680
+currentTime:  37919
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  37919
+currentTime:  37920
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  37920
+currentTime:  38159
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  38159
+currentTime:  38160
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  38160
+currentTime:  38399
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  38399
+currentTime:  38400
+message:  note_on channel=3 note=49 velocity=0 time=239
+prevTime:  38400
+currentTime:  38639
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  38639
+currentTime:  38640
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  38640
+currentTime:  38879
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  38879
+currentTime:  38880
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  38880
+currentTime:  39119
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  39119
+currentTime:  39120
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  39120
+currentTime:  39359
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  39359
+currentTime:  39360
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  39360
+currentTime:  39599
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  39599
+currentTime:  39600
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  39600
+currentTime:  39839
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  39839
+currentTime:  39840
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  39840
+currentTime:  40079
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  40079
+currentTime:  40080
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  40080
+currentTime:  40319
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  40319
+currentTime:  40320
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  40320
+currentTime:  40559
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  40559
+currentTime:  40560
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  40560
+currentTime:  40799
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  40799
+currentTime:  40800
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  40800
+currentTime:  41039
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  41039
+currentTime:  41040
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  41040
+currentTime:  41279
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  41279
+currentTime:  41280
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  41280
+currentTime:  41519
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  41519
+currentTime:  41520
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  41520
+currentTime:  41759
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  41759
+currentTime:  41760
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  41760
+currentTime:  41999
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  41999
+currentTime:  42000
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  42000
+currentTime:  42239
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  42239
+currentTime:  42240
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  42240
+currentTime:  42240
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  42240
+currentTime:  42479
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  42479
+currentTime:  42479
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  42479
+currentTime:  42480
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  42480
+currentTime:  42480
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  42480
+currentTime:  42719
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  42719
+currentTime:  42719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  42719
+currentTime:  42720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  42720
+currentTime:  42959
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  42959
+currentTime:  42960
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  42960
+currentTime:  42960
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  42960
+currentTime:  43199
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  43199
+currentTime:  43199
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  43199
+currentTime:  43200
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  43200
+currentTime:  43200
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  43200
+currentTime:  43439
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  43439
+currentTime:  43439
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  43439
+currentTime:  43440
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  43440
+currentTime:  43679
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  43679
+currentTime:  43680
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  43680
+currentTime:  43680
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  43680
+currentTime:  43919
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  43919
+currentTime:  43919
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  43919
+currentTime:  43920
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  43920
+currentTime:  43920
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  43920
+currentTime:  44159
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  44159
+currentTime:  44159
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  44159
+currentTime:  44160
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  44160
+currentTime:  44399
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  44399
+currentTime:  44400
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  44400
+currentTime:  44639
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  44639
+currentTime:  44640
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  44640
+currentTime:  44879
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  44879
+currentTime:  44880
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  44880
+currentTime:  45119
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  45119
+currentTime:  45120
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  45120
+currentTime:  45359
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  45359
+currentTime:  45360
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  45360
+currentTime:  45599
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  45599
+currentTime:  45600
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  45600
+currentTime:  45839
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  45839
+currentTime:  45840
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  45840
+currentTime:  46079
+message:  note_on channel=3 note=49 velocity=127 time=1
+prevTime:  46079
+currentTime:  46080
+message:  note_on channel=3 note=49 velocity=0 time=239
+prevTime:  46080
+currentTime:  46319
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  46319
+currentTime:  46320
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  46320
+currentTime:  46559
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  46559
+currentTime:  46560
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  46560
+currentTime:  46799
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  46799
+currentTime:  46800
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  46800
+currentTime:  47039
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  47039
+currentTime:  47040
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  47040
+currentTime:  47279
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  47279
+currentTime:  47280
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  47280
+currentTime:  47519
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  47519
+currentTime:  47520
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  47520
+currentTime:  47759
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  47759
+currentTime:  47760
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  47760
+currentTime:  47999
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  47999
+currentTime:  48000
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  48000
+currentTime:  48239
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  48239
+currentTime:  48240
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  48240
+currentTime:  48479
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  48479
+currentTime:  48480
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  48480
+currentTime:  48719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  48719
+currentTime:  48720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  48720
+currentTime:  48959
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  48959
+currentTime:  48960
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  48960
+currentTime:  49199
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  49199
+currentTime:  49200
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  49200
+currentTime:  49439
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  49439
+currentTime:  49440
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  49440
+currentTime:  49679
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  49679
+currentTime:  49680
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  49680
+currentTime:  49919
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  49919
+currentTime:  49920
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  49920
+currentTime:  49920
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  49920
+currentTime:  50159
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  50159
+currentTime:  50159
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  50159
+currentTime:  50160
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  50160
+currentTime:  50160
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  50160
+currentTime:  50399
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  50399
+currentTime:  50399
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  50399
+currentTime:  50400
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  50400
+currentTime:  50639
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  50639
+currentTime:  50640
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  50640
+currentTime:  50640
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  50640
+currentTime:  50879
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  50879
+currentTime:  50879
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  50879
+currentTime:  50880
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  50880
+currentTime:  50880
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  50880
+currentTime:  51119
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  51119
+currentTime:  51119
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  51119
+currentTime:  51120
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  51120
+currentTime:  51359
+message:  note_on channel=3 note=43 velocity=127 time=1
+prevTime:  51359
+currentTime:  51360
+message:  note_on channel=3 note=50 velocity=127 time=0
+prevTime:  51360
+currentTime:  51360
+message:  note_on channel=3 note=43 velocity=0 time=239
+prevTime:  51360
+currentTime:  51599
+message:  note_on channel=3 note=50 velocity=0 time=0
+prevTime:  51599
+currentTime:  51599
+message:  note_on channel=3 note=42 velocity=127 time=1
+prevTime:  51599
+currentTime:  51600
+message:  note_on channel=3 note=49 velocity=127 time=0
+prevTime:  51600
+currentTime:  51600
+message:  note_on channel=3 note=42 velocity=0 time=239
+prevTime:  51600
+currentTime:  51839
+message:  note_on channel=3 note=49 velocity=0 time=0
+prevTime:  51839
+currentTime:  51839
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  51839
+currentTime:  51840
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  51840
+currentTime:  52079
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  52079
+currentTime:  52080
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  52080
+currentTime:  52319
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  52319
+currentTime:  52320
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  52320
+currentTime:  52559
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  52559
+currentTime:  52560
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  52560
+currentTime:  52799
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  52799
+currentTime:  52800
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  52800
+currentTime:  53039
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  53039
+currentTime:  53040
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  53040
+currentTime:  53279
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  53279
+currentTime:  53280
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  53280
+currentTime:  53519
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  53519
+currentTime:  53520
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  53520
+currentTime:  53759
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  53759
+currentTime:  53760
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  53760
+currentTime:  53999
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  53999
+currentTime:  54000
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  54000
+currentTime:  54239
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  54239
+currentTime:  54240
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  54240
+currentTime:  54479
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  54479
+currentTime:  54480
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  54480
+currentTime:  54719
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  54719
+currentTime:  54720
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  54720
+currentTime:  54959
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  54959
+currentTime:  54960
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  54960
+currentTime:  55199
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  55199
+currentTime:  55200
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  55200
+currentTime:  55439
+message:  note_on channel=3 note=40 velocity=127 time=241
+prevTime:  55439
+currentTime:  55680
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  55680
+currentTime:  55919
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  55919
+currentTime:  55920
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  55920
+currentTime:  56159
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  56159
+currentTime:  56160
+message:  note_on channel=3 note=47 velocity=0 time=239
+prevTime:  56160
+currentTime:  56399
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  56399
+currentTime:  56400
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  56400
+currentTime:  56639
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  56639
+currentTime:  56640
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  56640
+currentTime:  56879
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  56879
+currentTime:  56880
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  56880
+currentTime:  57119
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  57119
+currentTime:  57120
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  57120
+currentTime:  57359
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  57359
+currentTime:  57360
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  57360
+currentTime:  57599
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  57599
+currentTime:  57600
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  57600
+currentTime:  57839
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  57839
+currentTime:  57840
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  57840
+currentTime:  58079
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  58079
+currentTime:  58080
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  58080
+currentTime:  58319
+message:  note_on channel=3 note=48 velocity=127 time=1
+prevTime:  58319
+currentTime:  58320
+message:  note_on channel=3 note=48 velocity=0 time=239
+prevTime:  58320
+currentTime:  58559
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  58559
+currentTime:  58560
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  58560
+currentTime:  58799
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  58799
+currentTime:  58800
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  58800
+currentTime:  59039
+message:  note_on channel=3 note=47 velocity=127 time=1
+prevTime:  59039
+currentTime:  59040
+message:  note_on channel=3 note=54 velocity=127 time=0
+prevTime:  59040
+currentTime:  59040
+message:  note_on channel=3 note=59 velocity=127 time=0
+prevTime:  59040
+currentTime:  59040
+message:  note_on channel=3 note=47 velocity=0 time=479
+prevTime:  59040
+currentTime:  59519
+message:  note_on channel=3 note=54 velocity=0 time=0
+prevTime:  59519
+currentTime:  59519
+message:  note_on channel=3 note=59 velocity=0 time=0
+prevTime:  59519
+currentTime:  59519
+message:  note_on channel=3 note=40 velocity=127 time=1
+prevTime:  59519
+currentTime:  59520
+message:  note_on channel=3 note=40 velocity=0 time=239
+prevTime:  59520
+currentTime:  59759
+message:  note_on channel=3 note=41 velocity=127 time=1
+prevTime:  59759
+currentTime:  59760
+message:  note_on channel=3 note=41 velocity=0 time=239
+prevTime:  59760
+currentTime:  59999
+message:  note_on channel=3 note=47 velocity=127 time=1
+message:  <meta message key_signature key='C' time=0>
+message:  control_change channel=4 control=121 value=0 time=0
+message:  program_change channel=4 program=27 time=0
+message:  control_change channel=4 control=7 value=122 time=0
+message:  control_change channel=4 control=10 value=64 time=0
+message:  control_change channel=4 control=91 value=0 time=0
+message:  control_change channel=4 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=4 note=40 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=4 note=52 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=4 note=59 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  control_change channel=10 control=121 value=0 time=0
+message:  program_change channel=10 program=31 time=0
+message:  control_change channel=10 control=7 value=100 time=0
+message:  control_change channel=10 control=10 value=64 time=0
+message:  control_change channel=10 control=91 value=0 time=0
+message:  control_change channel=10 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=11 control=121 value=0 time=0
+message:  program_change channel=11 program=30 time=0
+message:  control_change channel=11 control=7 value=100 time=0
+message:  control_change channel=11 control=10 value=64 time=0
+message:  control_change channel=11 control=91 value=0 time=0
+message:  control_change channel=11 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=12 control=121 value=0 time=0
+message:  program_change channel=12 program=29 time=0
+message:  control_change channel=12 control=7 value=100 time=0
+message:  control_change channel=12 control=10 value=64 time=0
+message:  control_change channel=12 control=91 value=0 time=0
+message:  control_change channel=12 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=13 control=121 value=0 time=0
+message:  program_change channel=13 program=28 time=0
+message:  control_change channel=13 control=7 value=100 time=0
+message:  control_change channel=13 control=10 value=64 time=0
+message:  control_change channel=13 control=91 value=0 time=0
+message:  control_change channel=13 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=14 control=121 value=0 time=0
+message:  program_change channel=14 program=26 time=0
+message:  control_change channel=14 control=7 value=100 time=0
+message:  control_change channel=14 control=10 value=64 time=0
+message:  control_change channel=14 control=91 value=0 time=0
+message:  control_change channel=14 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=4 note=40 velocity=0 time=479
+prevTime:  0
+currentTime:  479
+message:  note_on channel=4 note=52 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=4 note=59 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  479
+currentTime:  479
+message:  note_on channel=4 note=50 velocity=127 time=1441
+prevTime:  479
+currentTime:  1920
+message:  note_on channel=4 note=57 velocity=127 time=0
+prevTime:  1920
+currentTime:  1920
+message:  note_on channel=4 note=62 velocity=127 time=0
+prevTime:  1920
+currentTime:  1920
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  1920
+currentTime:  2399
+message:  note_on channel=4 note=57 velocity=0 time=0
+prevTime:  2399
+currentTime:  2399
+message:  note_on channel=4 note=62 velocity=0 time=0
+prevTime:  2399
+currentTime:  2399
+message:  note_on channel=4 note=50 velocity=127 time=1
+prevTime:  2399
+currentTime:  2400
+message:  note_on channel=4 note=56 velocity=127 time=0
+prevTime:  2400
+currentTime:  2400
+message:  note_on channel=4 note=61 velocity=127 time=0
+prevTime:  2400
+currentTime:  2400
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  2400
+currentTime:  2879
+message:  note_on channel=4 note=56 velocity=0 time=0
+prevTime:  2879
+currentTime:  2879
+message:  note_on channel=4 note=61 velocity=0 time=0
+prevTime:  2879
+currentTime:  2879
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  2879
+currentTime:  2880
+message:  note_on channel=4 note=55 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=4 note=60 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  2880
+currentTime:  2880
+message:  note_on channel=4 note=48 velocity=0 time=2879
+prevTime:  2880
+currentTime:  5759
+message:  note_on channel=4 note=55 velocity=0 time=0
+prevTime:  5759
+currentTime:  5759
+message:  note_on channel=4 note=60 velocity=0 time=0
+prevTime:  5759
+currentTime:  5759
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  5759
+currentTime:  5759
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  5759
+currentTime:  5760
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  5760
+currentTime:  5999
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  5999
+currentTime:  6000
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  6000
+currentTime:  6239
+message:  note_on channel=4 note=52 velocity=127 time=1
+prevTime:  6239
+currentTime:  6240
+message:  note_on channel=4 note=52 velocity=0 time=239
+prevTime:  6240
+currentTime:  6479
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  6479
+currentTime:  6480
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  6480
+currentTime:  6719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  6719
+currentTime:  6720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  6720
+currentTime:  6959
+message:  note_on channel=4 note=51 velocity=127 time=1
+prevTime:  6959
+currentTime:  6960
+message:  note_on channel=4 note=51 velocity=0 time=239
+prevTime:  6960
+currentTime:  7199
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  7199
+currentTime:  7200
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  7200
+currentTime:  7439
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  7439
+currentTime:  7440
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  7440
+currentTime:  7679
+message:  note_on channel=4 note=50 velocity=127 time=1
+prevTime:  7679
+currentTime:  7680
+message:  note_on channel=4 note=57 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=4 note=62 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=4 note=66 velocity=127 time=0
+prevTime:  7680
+currentTime:  7680
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  7680
+currentTime:  8159
+message:  note_on channel=4 note=57 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=4 note=62 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=4 note=66 velocity=0 time=0
+prevTime:  8159
+currentTime:  8159
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  8159
+currentTime:  8160
+message:  note_on channel=4 note=56 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=4 note=61 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=4 note=65 velocity=127 time=0
+prevTime:  8160
+currentTime:  8160
+message:  note_on channel=4 note=49 velocity=0 time=479
+prevTime:  8160
+currentTime:  8639
+message:  note_on channel=4 note=56 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=4 note=61 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=4 note=65 velocity=0 time=0
+prevTime:  8639
+currentTime:  8639
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  8639
+currentTime:  8640
+message:  note_on channel=4 note=55 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=4 note=60 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  8640
+currentTime:  8640
+message:  note_on channel=4 note=48 velocity=0 time=959
+prevTime:  8640
+currentTime:  9599
+message:  note_on channel=4 note=55 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=4 note=60 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  9599
+currentTime:  9599
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  9599
+currentTime:  9600
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  9600
+currentTime:  9839
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  9839
+currentTime:  9840
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  9840
+currentTime:  10079
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  10079
+currentTime:  10080
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  10080
+currentTime:  10319
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  10319
+currentTime:  10320
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  10320
+currentTime:  10559
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  10559
+currentTime:  10560
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  10560
+currentTime:  10799
+message:  note_on channel=4 note=46 velocity=127 time=1
+prevTime:  10799
+currentTime:  10800
+message:  note_on channel=4 note=46 velocity=0 time=239
+prevTime:  10800
+currentTime:  11039
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  11039
+currentTime:  11040
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  11040
+currentTime:  11279
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  11279
+currentTime:  11280
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  11280
+currentTime:  11519
+message:  note_on channel=4 note=45 velocity=127 time=1
+prevTime:  11519
+currentTime:  11520
+message:  note_on channel=4 note=45 velocity=0 time=239
+prevTime:  11520
+currentTime:  11759
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  11759
+currentTime:  11760
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  11760
+currentTime:  11999
+message:  note_on channel=4 note=44 velocity=127 time=1
+prevTime:  11999
+currentTime:  12000
+message:  note_on channel=4 note=44 velocity=0 time=239
+prevTime:  12000
+currentTime:  12239
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  12239
+currentTime:  12240
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  12240
+currentTime:  12479
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  12479
+currentTime:  12480
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  12480
+currentTime:  12719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  12719
+currentTime:  12720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  12720
+currentTime:  12959
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  12959
+currentTime:  12960
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  12960
+currentTime:  13199
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  13199
+currentTime:  13200
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  13200
+currentTime:  13439
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  13439
+currentTime:  13440
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  13440
+currentTime:  13679
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  13679
+currentTime:  13680
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  13680
+currentTime:  13919
+message:  note_on channel=4 note=52 velocity=127 time=1
+prevTime:  13919
+currentTime:  13920
+message:  note_on channel=4 note=52 velocity=0 time=239
+prevTime:  13920
+currentTime:  14159
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  14159
+currentTime:  14160
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  14160
+currentTime:  14399
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  14399
+currentTime:  14400
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  14400
+currentTime:  14639
+message:  note_on channel=4 note=51 velocity=127 time=1
+prevTime:  14639
+currentTime:  14640
+message:  note_on channel=4 note=51 velocity=0 time=239
+prevTime:  14640
+currentTime:  14879
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  14879
+currentTime:  14880
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  14880
+currentTime:  15119
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  15119
+currentTime:  15120
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  15120
+currentTime:  15359
+message:  note_on channel=4 note=50 velocity=127 time=1
+prevTime:  15359
+currentTime:  15360
+message:  note_on channel=4 note=57 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=4 note=62 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=4 note=66 velocity=127 time=0
+prevTime:  15360
+currentTime:  15360
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  15360
+currentTime:  15839
+message:  note_on channel=4 note=57 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=4 note=62 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=4 note=66 velocity=0 time=0
+prevTime:  15839
+currentTime:  15839
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  15839
+currentTime:  15840
+message:  note_on channel=4 note=56 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=4 note=61 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=4 note=65 velocity=127 time=0
+prevTime:  15840
+currentTime:  15840
+message:  note_on channel=4 note=49 velocity=0 time=479
+prevTime:  15840
+currentTime:  16319
+message:  note_on channel=4 note=56 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=4 note=61 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=4 note=65 velocity=0 time=0
+prevTime:  16319
+currentTime:  16319
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  16319
+currentTime:  16320
+message:  note_on channel=4 note=55 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=4 note=60 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  16320
+currentTime:  16320
+message:  note_on channel=4 note=48 velocity=0 time=959
+prevTime:  16320
+currentTime:  17279
+message:  note_on channel=4 note=55 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=4 note=60 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  17279
+currentTime:  17279
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  17279
+currentTime:  17280
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  17280
+currentTime:  17519
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  17519
+currentTime:  17520
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  17520
+currentTime:  17759
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  17759
+currentTime:  17760
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  17760
+currentTime:  17999
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  17999
+currentTime:  18000
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  18000
+currentTime:  18239
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  18239
+currentTime:  18240
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  18240
+currentTime:  18479
+message:  note_on channel=4 note=46 velocity=127 time=1
+prevTime:  18479
+currentTime:  18480
+message:  note_on channel=4 note=46 velocity=0 time=239
+prevTime:  18480
+currentTime:  18719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  18719
+currentTime:  18720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  18720
+currentTime:  18959
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  18959
+currentTime:  18960
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  18960
+currentTime:  19199
+message:  note_on channel=4 note=45 velocity=127 time=1
+prevTime:  19199
+currentTime:  19200
+message:  note_on channel=4 note=45 velocity=0 time=239
+prevTime:  19200
+currentTime:  19439
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  19439
+currentTime:  19440
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  19440
+currentTime:  19679
+message:  note_on channel=4 note=44 velocity=127 time=1
+prevTime:  19679
+currentTime:  19680
+message:  note_on channel=4 note=44 velocity=0 time=239
+prevTime:  19680
+currentTime:  19919
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  19919
+currentTime:  19920
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  19920
+currentTime:  20159
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  20159
+currentTime:  20160
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  20160
+currentTime:  20399
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  20399
+currentTime:  20400
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  20400
+currentTime:  20639
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  20639
+currentTime:  20640
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  20640
+currentTime:  20879
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  20879
+currentTime:  20880
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  20880
+currentTime:  21119
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  21119
+currentTime:  21120
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  21120
+currentTime:  21359
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  21359
+currentTime:  21360
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  21360
+currentTime:  21599
+message:  note_on channel=4 note=52 velocity=127 time=1
+prevTime:  21599
+currentTime:  21600
+message:  note_on channel=4 note=52 velocity=0 time=239
+prevTime:  21600
+currentTime:  21839
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  21839
+currentTime:  21840
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  21840
+currentTime:  22079
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  22079
+currentTime:  22080
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  22080
+currentTime:  22319
+message:  note_on channel=4 note=51 velocity=127 time=1
+prevTime:  22319
+currentTime:  22320
+message:  note_on channel=4 note=51 velocity=0 time=239
+prevTime:  22320
+currentTime:  22559
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  22559
+currentTime:  22560
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  22560
+currentTime:  22799
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  22799
+currentTime:  22800
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  22800
+currentTime:  23039
+message:  note_on channel=4 note=50 velocity=127 time=1
+prevTime:  23039
+currentTime:  23040
+message:  note_on channel=4 note=57 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=4 note=62 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=4 note=66 velocity=127 time=0
+prevTime:  23040
+currentTime:  23040
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  23040
+currentTime:  23519
+message:  note_on channel=4 note=57 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=4 note=62 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=4 note=66 velocity=0 time=0
+prevTime:  23519
+currentTime:  23519
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  23519
+currentTime:  23520
+message:  note_on channel=4 note=56 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=4 note=61 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=4 note=65 velocity=127 time=0
+prevTime:  23520
+currentTime:  23520
+message:  note_on channel=4 note=49 velocity=0 time=479
+prevTime:  23520
+currentTime:  23999
+message:  note_on channel=4 note=56 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=4 note=61 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=4 note=65 velocity=0 time=0
+prevTime:  23999
+currentTime:  23999
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  23999
+currentTime:  24000
+message:  note_on channel=4 note=55 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=4 note=60 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  24000
+currentTime:  24000
+message:  note_on channel=4 note=48 velocity=0 time=959
+prevTime:  24000
+currentTime:  24959
+message:  note_on channel=4 note=55 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=4 note=60 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  24959
+currentTime:  24959
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  24959
+currentTime:  24960
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  24960
+currentTime:  25199
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  25199
+currentTime:  25200
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  25200
+currentTime:  25439
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  25439
+currentTime:  25440
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  25440
+currentTime:  25679
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  25679
+currentTime:  25680
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  25680
+currentTime:  25919
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  25919
+currentTime:  25920
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  25920
+currentTime:  26159
+message:  note_on channel=4 note=46 velocity=127 time=1
+prevTime:  26159
+currentTime:  26160
+message:  note_on channel=4 note=46 velocity=0 time=239
+prevTime:  26160
+currentTime:  26399
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  26399
+currentTime:  26400
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  26400
+currentTime:  26639
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  26639
+currentTime:  26640
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  26640
+currentTime:  26879
+message:  note_on channel=4 note=45 velocity=127 time=1
+prevTime:  26879
+currentTime:  26880
+message:  note_on channel=4 note=45 velocity=0 time=239
+prevTime:  26880
+currentTime:  27119
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  27119
+currentTime:  27120
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  27120
+currentTime:  27359
+message:  note_on channel=4 note=44 velocity=127 time=1
+prevTime:  27359
+currentTime:  27360
+message:  note_on channel=4 note=44 velocity=0 time=239
+prevTime:  27360
+currentTime:  27599
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  27599
+currentTime:  27600
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  27600
+currentTime:  27839
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  27839
+currentTime:  27840
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  27840
+currentTime:  28079
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  28079
+currentTime:  28080
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  28080
+currentTime:  28319
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  28319
+currentTime:  28320
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  28320
+currentTime:  28559
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  28559
+currentTime:  28560
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  28560
+currentTime:  28799
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  28799
+currentTime:  28800
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  28800
+currentTime:  29039
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  29039
+currentTime:  29040
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  29040
+currentTime:  29279
+message:  note_on channel=4 note=52 velocity=127 time=1
+prevTime:  29279
+currentTime:  29280
+message:  note_on channel=4 note=52 velocity=0 time=239
+prevTime:  29280
+currentTime:  29519
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  29519
+currentTime:  29520
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  29520
+currentTime:  29759
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  29759
+currentTime:  29760
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  29760
+currentTime:  29999
+message:  note_on channel=4 note=51 velocity=127 time=1
+prevTime:  29999
+currentTime:  30000
+message:  note_on channel=4 note=51 velocity=0 time=239
+prevTime:  30000
+currentTime:  30239
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  30239
+currentTime:  30240
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  30240
+currentTime:  30479
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  30479
+currentTime:  30480
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  30480
+currentTime:  30719
+message:  note_on channel=4 note=50 velocity=127 time=1
+prevTime:  30719
+currentTime:  30720
+message:  note_on channel=4 note=57 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=4 note=62 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=4 note=66 velocity=127 time=0
+prevTime:  30720
+currentTime:  30720
+message:  note_on channel=4 note=50 velocity=0 time=479
+prevTime:  30720
+currentTime:  31199
+message:  note_on channel=4 note=57 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=4 note=62 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=4 note=66 velocity=0 time=0
+prevTime:  31199
+currentTime:  31199
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  31199
+currentTime:  31200
+message:  note_on channel=4 note=56 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=4 note=61 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=4 note=65 velocity=127 time=0
+prevTime:  31200
+currentTime:  31200
+message:  note_on channel=4 note=49 velocity=0 time=479
+prevTime:  31200
+currentTime:  31679
+message:  note_on channel=4 note=56 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=4 note=61 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=4 note=65 velocity=0 time=0
+prevTime:  31679
+currentTime:  31679
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  31679
+currentTime:  31680
+message:  note_on channel=4 note=55 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=4 note=60 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=4 note=64 velocity=127 time=0
+prevTime:  31680
+currentTime:  31680
+message:  note_on channel=4 note=48 velocity=0 time=959
+prevTime:  31680
+currentTime:  32639
+message:  note_on channel=4 note=55 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=4 note=60 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=4 note=64 velocity=0 time=0
+prevTime:  32639
+currentTime:  32639
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  32639
+currentTime:  32640
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  32640
+currentTime:  32879
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  32879
+currentTime:  32880
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  32880
+currentTime:  33119
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  33119
+currentTime:  33120
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  33120
+currentTime:  33359
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  33359
+currentTime:  33360
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  33360
+currentTime:  33599
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  33599
+currentTime:  33600
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  33600
+currentTime:  33839
+message:  note_on channel=4 note=46 velocity=127 time=1
+prevTime:  33839
+currentTime:  33840
+message:  note_on channel=4 note=46 velocity=0 time=239
+prevTime:  33840
+currentTime:  34079
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  34079
+currentTime:  34080
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  34080
+currentTime:  34319
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  34319
+currentTime:  34320
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  34320
+currentTime:  34559
+message:  note_on channel=4 note=45 velocity=127 time=1
+prevTime:  34559
+currentTime:  34560
+message:  note_on channel=4 note=45 velocity=0 time=239
+prevTime:  34560
+currentTime:  34799
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  34799
+currentTime:  34800
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  34800
+currentTime:  35039
+message:  note_on channel=4 note=44 velocity=127 time=1
+prevTime:  35039
+currentTime:  35040
+message:  note_on channel=4 note=44 velocity=0 time=239
+prevTime:  35040
+currentTime:  35279
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  35279
+currentTime:  35280
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  35280
+currentTime:  35519
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  35519
+currentTime:  35520
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  35520
+currentTime:  35759
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  35759
+currentTime:  35760
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  35760
+currentTime:  35999
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  35999
+currentTime:  36000
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  36000
+currentTime:  36239
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  36239
+currentTime:  36240
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  36240
+currentTime:  36479
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  36479
+currentTime:  36480
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  36480
+currentTime:  36719
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  36719
+currentTime:  36720
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  36720
+currentTime:  36959
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  36959
+currentTime:  36960
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  36960
+currentTime:  37199
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  37199
+currentTime:  37200
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  37200
+currentTime:  37439
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  37439
+currentTime:  37440
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  37440
+currentTime:  37679
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  37679
+currentTime:  37680
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  37680
+currentTime:  37919
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  37919
+currentTime:  37920
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  37920
+currentTime:  38159
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  38159
+currentTime:  38160
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  38160
+currentTime:  38399
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  38399
+currentTime:  38400
+message:  note_on channel=4 note=49 velocity=0 time=239
+prevTime:  38400
+currentTime:  38639
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  38639
+currentTime:  38640
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  38640
+currentTime:  38879
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  38879
+currentTime:  38880
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  38880
+currentTime:  39119
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  39119
+currentTime:  39120
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  39120
+currentTime:  39359
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  39359
+currentTime:  39360
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  39360
+currentTime:  39599
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  39599
+currentTime:  39600
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  39600
+currentTime:  39839
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  39839
+currentTime:  39840
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  39840
+currentTime:  40079
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  40079
+currentTime:  40080
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  40080
+currentTime:  40319
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  40319
+currentTime:  40320
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  40320
+currentTime:  40559
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  40559
+currentTime:  40560
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  40560
+currentTime:  40799
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  40799
+currentTime:  40800
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  40800
+currentTime:  41039
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  41039
+currentTime:  41040
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  41040
+currentTime:  41279
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  41279
+currentTime:  41280
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  41280
+currentTime:  41519
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  41519
+currentTime:  41520
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  41520
+currentTime:  41759
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  41759
+currentTime:  41760
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  41760
+currentTime:  41999
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  41999
+currentTime:  42000
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  42000
+currentTime:  42239
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  42239
+currentTime:  42240
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  42240
+currentTime:  42240
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  42240
+currentTime:  42479
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  42479
+currentTime:  42479
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  42479
+currentTime:  42480
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  42480
+currentTime:  42480
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  42480
+currentTime:  42719
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  42719
+currentTime:  42719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  42719
+currentTime:  42720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  42720
+currentTime:  42959
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  42959
+currentTime:  42960
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  42960
+currentTime:  42960
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  42960
+currentTime:  43199
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  43199
+currentTime:  43199
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  43199
+currentTime:  43200
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  43200
+currentTime:  43200
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  43200
+currentTime:  43439
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  43439
+currentTime:  43439
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  43439
+currentTime:  43440
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  43440
+currentTime:  43679
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  43679
+currentTime:  43680
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  43680
+currentTime:  43680
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  43680
+currentTime:  43919
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  43919
+currentTime:  43919
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  43919
+currentTime:  43920
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  43920
+currentTime:  43920
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  43920
+currentTime:  44159
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  44159
+currentTime:  44159
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  44159
+currentTime:  44160
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  44160
+currentTime:  44399
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  44399
+currentTime:  44400
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  44400
+currentTime:  44639
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  44639
+currentTime:  44640
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  44640
+currentTime:  44879
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  44879
+currentTime:  44880
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  44880
+currentTime:  45119
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  45119
+currentTime:  45120
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  45120
+currentTime:  45359
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  45359
+currentTime:  45360
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  45360
+currentTime:  45599
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  45599
+currentTime:  45600
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  45600
+currentTime:  45839
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  45839
+currentTime:  45840
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  45840
+currentTime:  46079
+message:  note_on channel=4 note=49 velocity=127 time=1
+prevTime:  46079
+currentTime:  46080
+message:  note_on channel=4 note=49 velocity=0 time=239
+prevTime:  46080
+currentTime:  46319
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  46319
+currentTime:  46320
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  46320
+currentTime:  46559
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  46559
+currentTime:  46560
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  46560
+currentTime:  46799
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  46799
+currentTime:  46800
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  46800
+currentTime:  47039
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  47039
+currentTime:  47040
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  47040
+currentTime:  47279
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  47279
+currentTime:  47280
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  47280
+currentTime:  47519
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  47519
+currentTime:  47520
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  47520
+currentTime:  47759
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  47759
+currentTime:  47760
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  47760
+currentTime:  47999
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  47999
+currentTime:  48000
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  48000
+currentTime:  48239
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  48239
+currentTime:  48240
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  48240
+currentTime:  48479
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  48479
+currentTime:  48480
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  48480
+currentTime:  48719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  48719
+currentTime:  48720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  48720
+currentTime:  48959
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  48959
+currentTime:  48960
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  48960
+currentTime:  49199
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  49199
+currentTime:  49200
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  49200
+currentTime:  49439
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  49439
+currentTime:  49440
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  49440
+currentTime:  49679
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  49679
+currentTime:  49680
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  49680
+currentTime:  49919
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  49919
+currentTime:  49920
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  49920
+currentTime:  49920
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  49920
+currentTime:  50159
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  50159
+currentTime:  50159
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  50159
+currentTime:  50160
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  50160
+currentTime:  50160
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  50160
+currentTime:  50399
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  50399
+currentTime:  50399
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  50399
+currentTime:  50400
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  50400
+currentTime:  50639
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  50639
+currentTime:  50640
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  50640
+currentTime:  50640
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  50640
+currentTime:  50879
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  50879
+currentTime:  50879
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  50879
+currentTime:  50880
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  50880
+currentTime:  50880
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  50880
+currentTime:  51119
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  51119
+currentTime:  51119
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  51119
+currentTime:  51120
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  51120
+currentTime:  51359
+message:  note_on channel=4 note=43 velocity=127 time=1
+prevTime:  51359
+currentTime:  51360
+message:  note_on channel=4 note=50 velocity=127 time=0
+prevTime:  51360
+currentTime:  51360
+message:  note_on channel=4 note=43 velocity=0 time=239
+prevTime:  51360
+currentTime:  51599
+message:  note_on channel=4 note=50 velocity=0 time=0
+prevTime:  51599
+currentTime:  51599
+message:  note_on channel=4 note=42 velocity=127 time=1
+prevTime:  51599
+currentTime:  51600
+message:  note_on channel=4 note=49 velocity=127 time=0
+prevTime:  51600
+currentTime:  51600
+message:  note_on channel=4 note=42 velocity=0 time=239
+prevTime:  51600
+currentTime:  51839
+message:  note_on channel=4 note=49 velocity=0 time=0
+prevTime:  51839
+currentTime:  51839
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  51839
+currentTime:  51840
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  51840
+currentTime:  52079
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  52079
+currentTime:  52080
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  52080
+currentTime:  52319
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  52319
+currentTime:  52320
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  52320
+currentTime:  52559
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  52559
+currentTime:  52560
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  52560
+currentTime:  52799
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  52799
+currentTime:  52800
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  52800
+currentTime:  53039
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  53039
+currentTime:  53040
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  53040
+currentTime:  53279
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  53279
+currentTime:  53280
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  53280
+currentTime:  53519
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  53519
+currentTime:  53520
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  53520
+currentTime:  53759
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  53759
+currentTime:  53760
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  53760
+currentTime:  53999
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  53999
+currentTime:  54000
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  54000
+currentTime:  54239
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  54239
+currentTime:  54240
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  54240
+currentTime:  54479
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  54479
+currentTime:  54480
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  54480
+currentTime:  54719
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  54719
+currentTime:  54720
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  54720
+currentTime:  54959
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  54959
+currentTime:  54960
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  54960
+currentTime:  55199
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  55199
+currentTime:  55200
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  55200
+currentTime:  55439
+message:  note_on channel=4 note=40 velocity=127 time=241
+prevTime:  55439
+currentTime:  55680
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  55680
+currentTime:  55919
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  55919
+currentTime:  55920
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  55920
+currentTime:  56159
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  56159
+currentTime:  56160
+message:  note_on channel=4 note=47 velocity=0 time=239
+prevTime:  56160
+currentTime:  56399
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  56399
+currentTime:  56400
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  56400
+currentTime:  56639
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  56639
+currentTime:  56640
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  56640
+currentTime:  56879
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  56879
+currentTime:  56880
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  56880
+currentTime:  57119
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  57119
+currentTime:  57120
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  57120
+currentTime:  57359
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  57359
+currentTime:  57360
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  57360
+currentTime:  57599
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  57599
+currentTime:  57600
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  57600
+currentTime:  57839
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  57839
+currentTime:  57840
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  57840
+currentTime:  58079
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  58079
+currentTime:  58080
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  58080
+currentTime:  58319
+message:  note_on channel=4 note=48 velocity=127 time=1
+prevTime:  58319
+currentTime:  58320
+message:  note_on channel=4 note=48 velocity=0 time=239
+prevTime:  58320
+currentTime:  58559
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  58559
+currentTime:  58560
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  58560
+currentTime:  58799
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  58799
+currentTime:  58800
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  58800
+currentTime:  59039
+message:  note_on channel=4 note=47 velocity=127 time=1
+prevTime:  59039
+currentTime:  59040
+message:  note_on channel=4 note=54 velocity=127 time=0
+prevTime:  59040
+currentTime:  59040
+message:  note_on channel=4 note=59 velocity=127 time=0
+prevTime:  59040
+currentTime:  59040
+message:  note_on channel=4 note=47 velocity=0 time=479
+prevTime:  59040
+currentTime:  59519
+message:  note_on channel=4 note=54 velocity=0 time=0
+prevTime:  59519
+currentTime:  59519
+message:  note_on channel=4 note=59 velocity=0 time=0
+prevTime:  59519
+currentTime:  59519
+message:  note_on channel=4 note=40 velocity=127 time=1
+prevTime:  59519
+currentTime:  59520
+message:  note_on channel=4 note=40 velocity=0 time=239
+prevTime:  59520
+currentTime:  59759
+message:  note_on channel=4 note=41 velocity=127 time=1
+prevTime:  59759
+currentTime:  59760
+message:  note_on channel=4 note=41 velocity=0 time=239
+prevTime:  59760
+currentTime:  59999
+message:  note_on channel=4 note=47 velocity=127 time=1
+message:  <meta message key_signature key='C' time=0>
+message:  control_change channel=5 control=121 value=0 time=0
+message:  program_change channel=5 program=27 time=0
+message:  control_change channel=5 control=7 value=127 time=0
+message:  control_change channel=5 control=10 value=64 time=0
+message:  control_change channel=5 control=91 value=0 time=0
+message:  control_change channel=5 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=15 control=121 value=0 time=0
+message:  program_change channel=15 program=31 time=0
+message:  control_change channel=15 control=7 value=100 time=0
+message:  control_change channel=15 control=10 value=64 time=0
+message:  control_change channel=15 control=91 value=0 time=0
+message:  control_change channel=15 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=0 control=121 value=0 time=0
+message:  program_change channel=0 program=30 time=0
+message:  control_change channel=0 control=7 value=100 time=0
+message:  control_change channel=0 control=10 value=64 time=0
+message:  control_change channel=0 control=91 value=0 time=0
+message:  control_change channel=0 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=1 control=121 value=0 time=0
+message:  program_change channel=1 program=29 time=0
+message:  control_change channel=1 control=7 value=100 time=0
+message:  control_change channel=1 control=10 value=64 time=0
+message:  control_change channel=1 control=91 value=0 time=0
+message:  control_change channel=1 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=2 control=121 value=0 time=0
+message:  program_change channel=2 program=28 time=0
+message:  control_change channel=2 control=7 value=100 time=0
+message:  control_change channel=2 control=10 value=64 time=0
+message:  control_change channel=2 control=91 value=0 time=0
+message:  control_change channel=2 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=3 control=121 value=0 time=0
+message:  program_change channel=3 program=26 time=0
+message:  control_change channel=3 control=7 value=100 time=0
+message:  control_change channel=3 control=10 value=64 time=0
+message:  control_change channel=3 control=91 value=0 time=0
+message:  control_change channel=3 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=5 note=40 velocity=127 time=84480
+prevTime:  0
+currentTime:  84480
+message:  note_on channel=5 note=40 velocity=0 time=239
+message:  <meta message key_signature key='C' time=0>
+message:  control_change channel=7 control=121 value=0 time=0
+message:  program_change channel=7 program=25 time=0
+message:  control_change channel=7 control=7 value=93 time=0
+message:  control_change channel=7 control=10 value=64 time=0
+message:  control_change channel=7 control=91 value=0 time=0
+message:  control_change channel=7 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=7 note=28 velocity=127 time=0
+prevTime:  0
+currentTime:  0
+message:  control_change channel=4 control=121 value=0 time=0
+message:  program_change channel=4 program=28 time=0
+message:  control_change channel=4 control=7 value=100 time=0
+message:  control_change channel=4 control=10 value=64 time=0
+message:  control_change channel=4 control=91 value=0 time=0
+message:  control_change channel=4 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  control_change channel=5 control=121 value=0 time=0
+message:  program_change channel=5 program=26 time=0
+message:  control_change channel=5 control=7 value=100 time=0
+message:  control_change channel=5 control=10 value=64 time=0
+message:  control_change channel=5 control=91 value=0 time=0
+message:  control_change channel=5 control=93 value=0 time=0
+message:  <meta message midi_port port=0 time=0>
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  0
+currentTime:  479
+message:  note_on channel=7 note=38 velocity=127 time=1441
+prevTime:  479
+currentTime:  1920
+message:  note_on channel=7 note=38 velocity=0 time=479
+prevTime:  1920
+currentTime:  2399
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  2399
+currentTime:  2400
+message:  note_on channel=7 note=37 velocity=0 time=479
+prevTime:  2400
+currentTime:  2879
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  2879
+currentTime:  2880
+message:  note_on channel=7 note=36 velocity=0 time=2879
+prevTime:  2880
+currentTime:  5759
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  5759
+currentTime:  5760
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  5760
+currentTime:  6239
+message:  note_on channel=7 note=29 velocity=127 time=6721
+prevTime:  6239
+currentTime:  12960
+message:  note_on channel=7 note=29 velocity=0 time=479
+prevTime:  12960
+currentTime:  13439
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  13439
+currentTime:  13440
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  13440
+currentTime:  13919
+message:  note_on channel=7 note=38 velocity=127 time=1441
+prevTime:  13919
+currentTime:  15360
+message:  note_on channel=7 note=38 velocity=0 time=479
+prevTime:  15360
+currentTime:  15839
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  15839
+currentTime:  15840
+message:  note_on channel=7 note=37 velocity=0 time=479
+prevTime:  15840
+currentTime:  16319
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  16319
+currentTime:  16320
+message:  note_on channel=7 note=36 velocity=0 time=959
+prevTime:  16320
+currentTime:  17279
+message:  note_on channel=7 note=29 velocity=127 time=3361
+prevTime:  17279
+currentTime:  20640
+message:  note_on channel=7 note=29 velocity=0 time=479
+prevTime:  20640
+currentTime:  21119
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  21119
+currentTime:  21120
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  21120
+currentTime:  21599
+message:  note_on channel=7 note=38 velocity=127 time=1441
+prevTime:  21599
+currentTime:  23040
+message:  note_on channel=7 note=38 velocity=0 time=479
+prevTime:  23040
+currentTime:  23519
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  23519
+currentTime:  23520
+message:  note_on channel=7 note=37 velocity=0 time=479
+prevTime:  23520
+currentTime:  23999
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  23999
+currentTime:  24000
+message:  note_on channel=7 note=36 velocity=0 time=959
+prevTime:  24000
+currentTime:  24959
+message:  note_on channel=7 note=29 velocity=127 time=3361
+prevTime:  24959
+currentTime:  28320
+message:  note_on channel=7 note=29 velocity=0 time=479
+prevTime:  28320
+currentTime:  28799
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  28799
+currentTime:  28800
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  28800
+currentTime:  29279
+message:  note_on channel=7 note=38 velocity=127 time=1441
+prevTime:  29279
+currentTime:  30720
+message:  note_on channel=7 note=38 velocity=0 time=479
+prevTime:  30720
+currentTime:  31199
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  31199
+currentTime:  31200
+message:  note_on channel=7 note=37 velocity=0 time=479
+prevTime:  31200
+currentTime:  31679
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  31679
+currentTime:  31680
+message:  note_on channel=7 note=36 velocity=0 time=959
+prevTime:  31680
+currentTime:  32639
+message:  note_on channel=7 note=36 velocity=127 time=481
+prevTime:  32639
+currentTime:  33120
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  33120
+currentTime:  33359
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  33359
+currentTime:  33360
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  33360
+currentTime:  33599
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  33599
+currentTime:  33600
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  33600
+currentTime:  33839
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  33839
+currentTime:  33840
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  33840
+currentTime:  34079
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  34079
+currentTime:  34080
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  34080
+currentTime:  34319
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  34319
+currentTime:  34320
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  34320
+currentTime:  34559
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  34559
+currentTime:  34560
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  34560
+currentTime:  34799
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  34799
+currentTime:  34800
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  34800
+currentTime:  35039
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  35039
+currentTime:  35040
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  35040
+currentTime:  35279
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  35279
+currentTime:  35280
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  35280
+currentTime:  35519
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  35519
+currentTime:  35520
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  35520
+currentTime:  35759
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  35759
+currentTime:  35760
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  35760
+currentTime:  35999
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  35999
+currentTime:  36000
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  36000
+currentTime:  36239
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  36239
+currentTime:  36240
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  36240
+currentTime:  36479
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  36479
+currentTime:  36480
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  36480
+currentTime:  36959
+message:  note_on channel=7 note=31 velocity=127 time=5281
+prevTime:  36959
+currentTime:  42240
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  42240
+currentTime:  42479
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  42479
+currentTime:  42480
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  42480
+currentTime:  42719
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  42719
+currentTime:  42720
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  42720
+currentTime:  42959
+message:  note_on channel=7 note=31 velocity=127 time=1
+prevTime:  42959
+currentTime:  42960
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  42960
+currentTime:  43199
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  43199
+currentTime:  43200
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  43200
+currentTime:  43439
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  43439
+currentTime:  43440
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  43440
+currentTime:  43679
+message:  note_on channel=7 note=31 velocity=127 time=1
+prevTime:  43679
+currentTime:  43680
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  43680
+currentTime:  43919
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  43919
+currentTime:  43920
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  43920
+currentTime:  44159
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  44159
+currentTime:  44160
+message:  note_on channel=7 note=28 velocity=0 time=479
+prevTime:  44160
+currentTime:  44639
+message:  note_on channel=7 note=31 velocity=127 time=5281
+prevTime:  44639
+currentTime:  49920
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  49920
+currentTime:  50159
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  50159
+currentTime:  50160
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  50160
+currentTime:  50399
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  50399
+currentTime:  50400
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  50400
+currentTime:  50639
+message:  note_on channel=7 note=31 velocity=127 time=1
+prevTime:  50639
+currentTime:  50640
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  50640
+currentTime:  50879
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  50879
+currentTime:  50880
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  50880
+currentTime:  51119
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  51119
+currentTime:  51120
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  51120
+currentTime:  51359
+message:  note_on channel=7 note=31 velocity=127 time=1
+prevTime:  51359
+currentTime:  51360
+message:  note_on channel=7 note=31 velocity=0 time=239
+prevTime:  51360
+currentTime:  51599
+message:  note_on channel=7 note=30 velocity=127 time=1
+prevTime:  51599
+currentTime:  51600
+message:  note_on channel=7 note=30 velocity=0 time=239
+prevTime:  51600
+currentTime:  51839
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  51839
+currentTime:  51840
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  51840
+currentTime:  52079
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  52079
+currentTime:  52080
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  52080
+currentTime:  52319
+message:  note_on channel=7 note=35 velocity=127 time=1
+prevTime:  52319
+currentTime:  52320
+message:  note_on channel=7 note=35 velocity=0 time=239
+prevTime:  52320
+currentTime:  52559
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  52559
+currentTime:  52560
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  52560
+currentTime:  52799
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  52799
+currentTime:  52800
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  52800
+currentTime:  53039
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  53039
+currentTime:  53040
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  53040
+currentTime:  53279
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  53279
+currentTime:  53280
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  53280
+currentTime:  53519
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  53519
+currentTime:  53520
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  53520
+currentTime:  53759
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  53759
+currentTime:  53760
+message:  note_on channel=7 note=37 velocity=0 time=239
+prevTime:  53760
+currentTime:  53999
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  53999
+currentTime:  54000
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  54000
+currentTime:  54239
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  54239
+currentTime:  54240
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  54240
+currentTime:  54479
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  54479
+currentTime:  54480
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  54480
+currentTime:  54719
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  54719
+currentTime:  54720
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  54720
+currentTime:  54959
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  54959
+currentTime:  54960
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  54960
+currentTime:  55199
+message:  note_on channel=7 note=35 velocity=127 time=1
+prevTime:  55199
+currentTime:  55200
+message:  note_on channel=7 note=35 velocity=0 time=239
+prevTime:  55200
+currentTime:  55439
+message:  note_on channel=7 note=35 velocity=127 time=1
+prevTime:  55439
+currentTime:  55440
+message:  note_on channel=7 note=35 velocity=0 time=239
+prevTime:  55440
+currentTime:  55679
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  55679
+currentTime:  55680
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  55680
+currentTime:  55919
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  55919
+currentTime:  55920
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  55920
+currentTime:  56159
+message:  note_on channel=7 note=35 velocity=127 time=1
+prevTime:  56159
+currentTime:  56160
+message:  note_on channel=7 note=35 velocity=0 time=239
+prevTime:  56160
+currentTime:  56399
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  56399
+currentTime:  56400
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  56400
+currentTime:  56639
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  56639
+currentTime:  56640
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  56640
+currentTime:  56879
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  56879
+currentTime:  56880
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  56880
+currentTime:  57119
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  57119
+currentTime:  57120
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  57120
+currentTime:  57359
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  57359
+currentTime:  57360
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  57360
+currentTime:  57599
+message:  note_on channel=7 note=37 velocity=127 time=1
+prevTime:  57599
+currentTime:  57600
+message:  note_on channel=7 note=37 velocity=0 time=239
+prevTime:  57600
+currentTime:  57839
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  57839
+currentTime:  57840
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  57840
+currentTime:  58079
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  58079
+currentTime:  58080
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  58080
+currentTime:  58319
+message:  note_on channel=7 note=36 velocity=127 time=1
+prevTime:  58319
+currentTime:  58320
+message:  note_on channel=7 note=36 velocity=0 time=239
+prevTime:  58320
+currentTime:  58559
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  58559
+currentTime:  58560
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  58560
+currentTime:  58799
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  58799
+currentTime:  58800
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  58800
+currentTime:  59039
+message:  note_on channel=7 note=35 velocity=127 time=1
+prevTime:  59039
+currentTime:  59040
+message:  note_on channel=7 note=35 velocity=0 time=479
+prevTime:  59040
+currentTime:  59519
+message:  note_on channel=7 note=28 velocity=127 time=1
+prevTime:  59519
+currentTime:  59520
+message:  note_on channel=7 note=28 velocity=0 time=239
+prevTime:  59520
+currentTime:  59759
+message:  note_on channel=7 note=29 velocity=127 time=1
+prevTime:  59759
+currentTime:  59760
+message:  note_on channel=7 note=29 velocity=0 time=239
+prevTime:  59760
+currentTime:  59999
+message:  note_on channel=7 note=35 velocity=127 time=1

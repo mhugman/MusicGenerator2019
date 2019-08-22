@@ -7,6 +7,29 @@ from mido.midifiles import MidiTrack
 from mido import MetaMessage
 from mido import Message
 
+'''
+def findTimeMultiple(mid): 
+
+    smallestTime = 1000000000000.
+
+    for i, track in enumerate(mid.tracks): 
+
+        for message in track: 
+
+
+            if message.type == "note_on" or message.type == "note_off":
+
+                print("message.time: ", message.time)
+
+                if message.time > 0 and message.time < smallestTime: 
+
+                    smallestTime = message.time
+
+    timeMultiple = 1. / smallestTime
+
+    return timeMultiple
+'''
+
 def parseMidi(noteArray, velocityArray, onOffArray, mid): 
     
     # Exclude certain tracks from being parsed, such as percussion
@@ -28,13 +51,19 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
             currentTime = 0
             for message in track:
 
+                print("message: ", message)
+
                 if currentTime >= maxSongLength - 100: 
 
                     break
                 
                 if message.type == "note_on" or message.type == "note_off":
                     prevTime = currentTime
+
+                    print("prevTime: ", prevTime)
                     currentTime = currentTime + message.time
+
+                    print("currentTime: ", currentTime)
                     
                     # previous notes are the same as (not yet updated) current notes, 
                     # but the third value is 0 instead of 1 (denoting the fact that 
@@ -42,6 +71,8 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                     prevNotes = []
                     for x in currentNotes: 
                          prevNotes.append((x[0], x[1], 0))
+
+                    print("prevNotes: ", prevNotes)
                     
                     # Fill in all the values since the previous message, and up to 
                     # but not including the time of the current message, with the
@@ -80,7 +111,7 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                             #raise ValueError(message, i, currentTime, currentNotes)
                             pass
                     
-                    #print("noteArray: ", noteArray[:,:currentTime])
+                    print("noteArray: ", noteArray[:,:currentTime])
                     #print("velocityArray: ", velocityArray[:,:currentTime])
 
 

@@ -13,19 +13,19 @@ torch.set_printoptions(threshold=10000)
 
 ############ GLOBAL PARAMETERS ######################
 
-SONG_LENGTH = 120000 # About 120000 for mario
+SONG_LENGTH = 60000 # About 120000 for mario
 NUM_TRACKS = 3
-TEMPO = 850 # mario about 850 BPM
+TEMPO = 220 # mario about 850 BPM
 
-H = 600 # dimensions for hidden layer
-ITERATIONS = 5000
+H = 400 # dimensions for hidden layer
+ITERATIONS = 2000
 LEARNING_RATE_NOTE = 0.0001
-LEARNING_RATE_VEL = 0.0001
+LEARNING_RATE_VEL = 0.00001
 LEARNING_RATE_ONOFF = 0.0000001
-FILEPRE = "emulate_mario"
-FILEPOST = "higherH"
+FILEPRE = "generated_midi/emulate_masterofpuppets"
+FILEPOST = "firsttry"
 
-FILESOURCE = "mario"
+FILESOURCE = "masterofpuppets_b"
 
 # Calculate global parameter for square Matrix
 
@@ -122,7 +122,7 @@ def toRectArray(squareArray):
 def playMidi(mid): 
     
     for message in mid.play():
-        #print(message)
+        print(message)
         outport.send(message)
 
 
@@ -147,6 +147,12 @@ onOffArray_source = np.zeros(noteArray.shape).astype("int")
 #print("note Array shape: ", noteArray.shape)
 #print("note Array source shape: ", noteArray_source.shape)
 
+#timeMultiple = midiFunctions.findTimeMultiple(mido.MidiFile('midi/' + FILESOURCE + '.mid'))
+
+#print("timeMultiple: ", timeMultiple)
+
+#raise ValueError(2345345)
+
 noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(noteArray_source, velocityArray_source, onOffArray_source, mido.MidiFile('midi/' + FILESOURCE + '.mid'))
 
 noteArray_source_square = toSquareArray(noteArray_source)
@@ -166,14 +172,16 @@ onOffArray_source_square = toSquareArray(onOffArray_source)
 #print("noteArray_source_rect: ", noteArray_source_rect)
 #print(noteArray_source_rect.shape)
 
-#midiFunctions.createMidi(noteArray_source_rect, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "new_source_rect")
+midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "new_song")
 
-#mid = mido.MidiFile('midi/new_song.mid')
+#mid = mido.MidiFile('midi/masterofpuppets_b.mid')
 #mid = mido.MidiFile('midi/new_source_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
-#mid = mido.MidiFile('midi/mario64.mid')
+#mid = mido.MidiFile('midi/mario.mid')
 
 #playMidi(mid)
+
+#raise ValueError(234234)
 
 #print("noteArray_source: ", noteArray_source)
 #print("onOffArray_source: ", onOffArray_source)
@@ -313,8 +321,8 @@ print("learned > 0: ", np.where( y_pred_onOff_rect > 0 ), np.where( y_pred_onOff
 filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_" + str(H) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 #midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), filename )
-#midiFunctions.createMidi(noteArray_source, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
-midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
+midiFunctions.createMidi(noteArray_source, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
+#midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
 
 mid = mido.MidiFile('midi/' + filename + '.mid')
 
