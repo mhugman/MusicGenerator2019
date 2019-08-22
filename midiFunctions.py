@@ -17,7 +17,7 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
     #print("max Song Length: ", maxSongLength)
         
     
-    for i, track in enumerate(mid.tracks[1:]):
+    for i, track in enumerate(mid.tracks):
     
         #print 'Track {}: {}'.format(i, track.name)
         
@@ -28,7 +28,7 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
             currentTime = 0
             for message in track:
 
-                if currentTime >= maxSongLength - 1000: 
+                if currentTime >= maxSongLength - 100: 
 
                     break
                 

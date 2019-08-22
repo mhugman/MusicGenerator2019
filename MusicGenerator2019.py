@@ -14,16 +14,16 @@ torch.set_printoptions(threshold=10000)
 ############ GLOBAL PARAMETERS ######################
 
 SONG_LENGTH = 120000 # About 120000 for mario
-NUM_TRACKS = 2
+NUM_TRACKS = 3
 TEMPO = 850 # mario about 850 BPM
 
-H = 50 # dimensions for hidden layer
-ITERATIONS = 4000
+H = 600 # dimensions for hidden layer
+ITERATIONS = 5000
 LEARNING_RATE_NOTE = 0.0001
 LEARNING_RATE_VEL = 0.0001
 LEARNING_RATE_ONOFF = 0.0000001
-FILEPRE = "emulate_test"
-FILEPOST = "all3"
+FILEPRE = "emulate_mario"
+FILEPOST = "higherH"
 
 FILESOURCE = "mario"
 
@@ -122,6 +122,7 @@ def toRectArray(squareArray):
 def playMidi(mid): 
     
     for message in mid.play():
+        #print(message)
         outport.send(message)
 
 
@@ -170,9 +171,14 @@ onOffArray_source_square = toSquareArray(onOffArray_source)
 #mid = mido.MidiFile('midi/new_song.mid')
 #mid = mido.MidiFile('midi/new_source_rect.mid')
 #mid = mido.MidiFile('midi/test2.mid')
-#mid = mido.MidiFile('midi/source.mid')
+#mid = mido.MidiFile('midi/mario64.mid')
 
 #playMidi(mid)
+
+#print("noteArray_source: ", noteArray_source)
+#print("onOffArray_source: ", onOffArray_source)
+
+#raise ValueError(235)
 
 
 
@@ -280,22 +286,22 @@ for t in range(ITERATIONS):
 
 ############ END DEEP LEARNING ########################
 
-print("onOffArray_source: ", onOffArray_source)
+#print("onOffArray_source: ", onOffArray_source)
 
 y_pred_note = y_pred_note * 127
 y_pred_vel = y_pred_vel * 127
-y_pred_onOff = y_pred_onOff * (1./ 1000) + 0.3
-print("y_pred_onOff: ", y_pred_onOff)
+y_pred_onOff = y_pred_onOff * (1./ 1000)
+#print("y_pred_onOff: ", y_pred_onOff)
 
-print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
+#print("y_pred_onOff rounded int: ", y_pred_onOff.round().int())
 
 
 y_pred_note_rect = toRectArray(y_pred_note.int())
 y_pred_vel_rect = toRectArray(y_pred_vel.int())
 y_pred_onOff_rect = toRectArray(y_pred_onOff.round().int())
 
-print(np.where( onOffArray_source > 0 ))
-print(np.where( y_pred_onOff_rect > 0 ))
+print("source > 0: ", np.where( onOffArray_source > 0 ), np.where( onOffArray_source > 0 )[0].shape)
+print("learned > 0: ", np.where( y_pred_onOff_rect > 0 ), np.where( y_pred_onOff_rect > 0 )[0].shape)
 #print(np.where( y_pred_onOff_rect > 0.3 ))
 #print(np.where( y_pred_onOff_rect > 0.5 ))
 #print(np.where( y_pred_onOff_rect > 0.7 ))
@@ -304,9 +310,10 @@ print(np.where( y_pred_onOff_rect > 0 ))
 #print("y_pred_vel_rect: ", y_pred_vel_rect)
 #print("y_pred_onOff_rect: ", y_pred_onOff_rect)
 
-filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+filename = FILEPRE + "_" + str(ITERATIONS) + "_" + str(LEARNING_RATE_NOTE) + "_" + str(LEARNING_RATE_VEL) + "_" + str(LEARNING_RATE_ONOFF) + "_" + str(H) + "_" + FILEPOST + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-
+#midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), filename )
+#midiFunctions.createMidi(noteArray_source, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
 midiFunctions.createMidi(y_pred_note_rect, y_pred_vel_rect, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename )
 
 mid = mido.MidiFile('midi/' + filename + '.mid')
