@@ -14,8 +14,11 @@ torch.set_printoptions(threshold=10000)
 ############ GLOBAL PARAMETERS ######################
 
 SONG_LENGTH = 60000 # About 120000 for mario
-NUM_TRACKS = 3
+MAX_POLYPHONY = 3
+NUM_MIDI_TRACKS = 3
+NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
 TEMPO = 220 # mario about 850 BPM
+
 
 H = 400 # dimensions for hidden layer
 ITERATIONS = 2000
@@ -140,9 +143,7 @@ noteArray_square = toSquareArray(noteArray)
 
 midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
 
-noteArray_source = np.zeros(noteArray.shape).astype("int")
-velocityArray_source = np.zeros(noteArray.shape).astype("int")
-onOffArray_source = np.zeros(noteArray.shape).astype("int")
+
 
 #print("note Array shape: ", noteArray.shape)
 #print("note Array source shape: ", noteArray_source.shape)
@@ -153,7 +154,7 @@ onOffArray_source = np.zeros(noteArray.shape).astype("int")
 
 #raise ValueError(2345345)
 
-noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(noteArray_source, velocityArray_source, onOffArray_source, mido.MidiFile('midi/' + FILESOURCE + '.mid'))
+noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(mido.MidiFile('midi/' + FILESOURCE + '.mid'))
 
 noteArray_source_square = toSquareArray(noteArray_source)
 
@@ -176,17 +177,17 @@ midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_sour
 
 #mid = mido.MidiFile('midi/masterofpuppets_b.mid')
 #mid = mido.MidiFile('midi/new_source_rect.mid')
-#mid = mido.MidiFile('midi/test2.mid')
+mid = mido.MidiFile('midi/new_song.mid')
 #mid = mido.MidiFile('midi/mario.mid')
 
-#playMidi(mid)
+playMidi(mid)
 
 #raise ValueError(234234)
 
 #print("noteArray_source: ", noteArray_source)
 #print("onOffArray_source: ", onOffArray_source)
 
-#raise ValueError(235)
+raise ValueError(235)
 
 
 

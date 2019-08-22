@@ -7,6 +7,16 @@ from mido.midifiles import MidiTrack
 from mido import MetaMessage
 from mido import Message
 
+MAX_SUSTAIN = 5 # maximum time to sustain a note before it gets removed
+MIN_LENGTH = 100
+
+SONG_LENGTH = 60000 # About 120000 for mario
+MAX_POLYPHONY = 3
+NUM_MIDI_TRACKS = 3
+NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
+TEMPO = 220 # mario about 850 BPM
+
+
 '''
 def findTimeMultiple(mid): 
 
@@ -30,10 +40,16 @@ def findTimeMultiple(mid):
     return timeMultiple
 '''
 
-def parseMidi(noteArray, velocityArray, onOffArray, mid): 
+def parseMidi(mid): 
     
     # Exclude certain tracks from being parsed, such as percussion
     exclusions = ["Percussion"]
+
+    
+
+    noteArray = np.zeros((NUM_TRACKS, SONG_LENGTH)).astype("int")
+    velocityArray = np.zeros((NUM_TRACKS, SONG_LENGTH)).astype("int")
+    onOffArray = np.zeros((NUM_TRACKS, SONG_LENGTH)).astype("int")
 
     maxSongLength = noteArray.shape[1]
 
@@ -45,25 +61,29 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
         #print 'Track {}: {}'.format(i, track.name)
         
         currentNotes = []
+
+        delQ = []
+
+        timeQ = []
         
         if track.name not in exclusions: 
             
             currentTime = 0
             for message in track:
 
-                print("message: ", message)
+                #print("message: ", message)
 
-                if currentTime >= maxSongLength - 100: 
+                if currentTime >= maxSongLength - MIN_LENGTH: 
 
                     break
                 
                 if message.type == "note_on" or message.type == "note_off":
                     prevTime = currentTime
 
-                    print("prevTime: ", prevTime)
+                    #print("prevTime: ", prevTime)
                     currentTime = currentTime + message.time
 
-                    print("currentTime: ", currentTime)
+                    #print("currentTime: ", currentTime)
                     
                     # previous notes are the same as (not yet updated) current notes, 
                     # but the third value is 0 instead of 1 (denoting the fact that 
@@ -71,8 +91,8 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                     prevNotes = []
                     for x in currentNotes: 
                          prevNotes.append((x[0], x[1], 0))
-
-                    print("prevNotes: ", prevNotes)
+                    
+                    #print("prevNotes: ", prevNotes)
                     
                     # Fill in all the values since the previous message, and up to 
                     # but not including the time of the current message, with the
@@ -80,20 +100,28 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                     if len(prevNotes) > 0:     
                         deltaTime = currentTime - prevTime
                         for j in range(0, deltaTime - 1): 
-                            try:     
-                                noteArray[i][currentTime - 1 - j] = prevNotes[0][0]
-                                #print("filling in this note: ", prevNotes[0][0])
-                                velocityArray[i][currentTime - 1 - j] = prevNotes[0][1]
-                                #print("with this velocity: ", prevNotes[0][1])
-                                onOffArray[i][currentTime - 1 - j] = prevNotes[0][2]
-                            except: 
-                                pass
+                            # Polyphony: add additional notes to extra tracks
+                            for k in range(MAX_POLYPHONY): 
+                                try:     
+                                    noteArray[i + k * NUM_MIDI_TRACKS][currentTime - 1 - j] = prevNotes[k][0]
+                                    #print("filling in this note: ", prevNotes[0][0])
+                                    velocityArray[i + k * NUM_MIDI_TRACKS][currentTime - 1 - j] = prevNotes[k][1]
+                                    #print("with this velocity: ", prevNotes[0][1])
+                                    onOffArray[i + k * NUM_MIDI_TRACKS][currentTime - 1 - j] = prevNotes[k][2]
+                                except: 
+                                    pass
                     
                     # update the current Notes being played with the information in the
                     # message
                     if message.type == "note_on": 
                                 
                         currentNotes.append((message.note + 1, message.velocity,1))
+
+                        delQ.append((message.note + 1, message.velocity,1))
+                        timeQ.append(MAX_SUSTAIN)
+
+
+                        #print("currentNotes: ", currentNotes)
                     
                     elif message.type == "note_off": 
                         for x in currentNotes: 
@@ -102,17 +130,34 @@ def parseMidi(noteArray, velocityArray, onOffArray, mid):
                         #currentNotes.remove((message.note + 1, message.velocity))   
                      
                     # fill in the value for this particular time with the current Notes
-                    if len(currentNotes) > 0:    
-                        try:  
-                            noteArray[i][currentTime] = np.asarray(currentNotes[0][0])
-                            velocityArray[i][currentTime] = np.asarray(currentNotes[0][1])
-                            onOffArray[i][currentTime] = np.asarray(currentNotes[0][2])
-                        except: 
-                            #raise ValueError(message, i, currentTime, currentNotes)
-                            pass
+                    if len(currentNotes) > 0:  
+                        for k in range(MAX_POLYPHONY):   
+                            try:  
+                                noteArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][0])
+                                velocityArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][1])
+                                onOffArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][2])
+                            except: 
+                                #raise ValueError(message, i, currentTime, currentNotes)
+                                pass
                     
-                    print("noteArray: ", noteArray[:,:currentTime])
+                    #print("noteArray: ", noteArray[:,:currentTime])
                     #print("velocityArray: ", velocityArray[:,:currentTime])
+                
+
+                
+                timeQ = [x - 1 for x in timeQ]
+
+                while timeQ.count(0) > 0 : 
+
+                    zeroIdx = timeQ.index(0)
+
+                    currentNotes.remove(delQ[zeroIdx])
+                    delQ.pop(zeroIdx)
+                    timeQ.pop(zeroIdx)
+
+                
+
+                    
 
 
                         
@@ -146,6 +191,9 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
             
             track.append(Message('control_change', channel = i, control=0, value=0, time=0))
 
+            # Grand Piano
+            track.append(Message('program_change', channel = i, program=0, time=0))
+            '''
             if i >= 0 and i < 3: 
                 # Grand Piano
                 track.append(Message('program_change', channel = i, program=0, time=0))
@@ -163,6 +211,7 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
             else: 
                 # Electric Piano
                 track.append(Message('program_change', channel = i, program=4, time=0))
+            '''
 
             #track.append(MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=96, notated_32nd_notes_per_beat=8, time=0))
             #track.append(MetaMessage('set_tempo', tempo=TEMPO, time=0))
