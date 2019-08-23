@@ -23,11 +23,11 @@ NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
 
 LEARN_NOTES = True
 LEARN_VEL = False
-LEARN_ONOFF = True
+LEARN_ONOFF = False
 
 
 H = 600 # dimensions for hidden layer
-ITERATIONS = 30000
+ITERATIONS = 200
 THRESHOLD = 1.0
 LEARNING_RATE_NOTE = 1e-4 # 1e-4 for mario
 LEARNING_RATE_VEL = 1e-5 # 1e-4 for mario
@@ -35,10 +35,10 @@ LEARNING_RATE_ONOFF = 1e-7
 
 alpha = 0.999999
 
-FILEPRE = "generated_midi/emulate_moonlight"
-FILEPOST = "fixedparser"
+FILEPRE = "generated_midi/combination_moonlight_mario_masterofpuppets"
+FILEPOST = "firsttry"
 
-FILESOURCE = "moonlight"
+FILESOURCES = ["mario", "moonlight", "masterofpuppets_b"]
 
 # Calculate global parameter for square Matrix
 
@@ -156,19 +156,38 @@ noteArray_square = toSquareArray(noteArray)
 
 #midiFunctions.createMidi(noteArray, velocityArray, onOffArray, int(round(60000000 / TEMPO)), "new_song")
 
-noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(mido.MidiFile('midi/' + FILESOURCE + '.mid'))
+noteArray_sources = []
+velocityArray_sources = []
+onOffArray_sources = []
+
+for i in range(len(FILESOURCES)): 
+    noteArray_source, velocityArray_source, onOffArray_source = midiFunctions.parseMidi(mido.MidiFile('midi/' + FILESOURCES[i] + '.mid'))
+
+    noteArray_sources.append(noteArray_source)
+    velocityArray_sources.append(velocityArray_source)
+    onOffArray_sources.append(onOffArray_source)
 
 #print("noteArray_source: ", noteArray_source)
 #print("velocityArray_source: ", velocityArray_source)
 #print("onOffArray_source: ", onOffArray_source)
 
-noteArray_source_square = toSquareArray(noteArray_source)
+noteArray_sources_square = []
+velocityArray_sources_square = []
+onOffArray_sources_square = []
 
-velocityArray_source_square = toSquareArray(velocityArray_source)
+for i in range(len(FILESOURCES)): 
 
-onOffArray_source_square = toSquareArray(onOffArray_source)
+    noteArray_source_square = toSquareArray(noteArray_sources[i])
 
-midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "parsed_" + FILESOURCE)
+    velocityArray_source_square = toSquareArray(velocityArray_sources[i])
+
+    onOffArray_source_square = toSquareArray(onOffArray_sources[i])
+
+    noteArray_sources_square.append(noteArray_source_square)
+    velocityArray_sources_square.append(velocityArray_source_square)
+    onOffArray_sources_square.append(onOffArray_source_square)
+
+    midiFunctions.createMidi(noteArray_sources[i], velocityArray_sources[i], onOffArray_sources[i], int(round(60000000 / TEMPO)), "parsed_" + FILESOURCES[i])
 
 #mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
 
@@ -192,20 +211,10 @@ x_note = torch.randn(D, D)
 x_vel = torch.randn(D, D)
 x_onOff = torch.randn(D, D)
 
-
-y_note = torch.from_numpy(noteArray_source_square.astype("float")).float()
-y_vel = torch.from_numpy(velocityArray_source_square.astype("float")).float()
-y_onOff = torch.from_numpy(onOffArray_source_square.astype("float")).float()
-
-y_note = y_note * (1./128)
-y_vel = y_vel * (1./128)
-y_onOff = y_onOff * 1000
-
-
 model_note = torch.nn.Sequential(
-    torch.nn.Linear(D, H),
-    torch.nn.ReLU(),
-    torch.nn.Linear(H, D),
+        torch.nn.Linear(D, H),
+        torch.nn.ReLU(),
+        torch.nn.Linear(H, D),
 )
 
 model_vel = torch.nn.Sequential(
@@ -223,80 +232,91 @@ model_onOff = torch.nn.Sequential(
 
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
-learning_rate_note = LEARNING_RATE_NOTE
-learning_rate_vel = LEARNING_RATE_VEL
-learning_rate_onoff = LEARNING_RATE_ONOFF
-
-loss_note_val = 0.
-loss_vel_val = 0.
-loss_onOff_val = 0.
+for i in range(len(FILESOURCES)): 
 
 
-for t in range(ITERATIONS):
-    
-    if LEARN_NOTES: 
+    y_note = torch.from_numpy(noteArray_sources_square[i].astype("float")).float()
+    y_vel = torch.from_numpy(velocityArray_sources_square[i].astype("float")).float()
+    y_onOff = torch.from_numpy(onOffArray_sources_square[i].astype("float")).float()
 
-        y_pred_note = model_note(x_note)
-        loss_note = loss_fn(y_pred_note, y_note)
+    y_note = y_note * (1./128)
+    y_vel = y_vel * (1./128)
+    y_onOff = y_onOff * 1000
 
-        loss_note_val =  loss_note.item()
+    learning_rate_note = LEARNING_RATE_NOTE
+    learning_rate_vel = LEARNING_RATE_VEL
+    learning_rate_onoff = LEARNING_RATE_ONOFF
 
-        model_note.zero_grad()
+    loss_note_val = 0.
+    loss_vel_val = 0.
+    loss_onOff_val = 0.
 
-        loss_note.backward()
 
+    for t in range(ITERATIONS):
         
-        with torch.no_grad():
-            for param in model_note.parameters():
-                param -= learning_rate_note * param.grad
+        if LEARN_NOTES: 
+
+            y_pred_note = model_note(x_note)
+            loss_note = loss_fn(y_pred_note, y_note)
+
+            loss_note_val =  loss_note.item()
+
+            model_note.zero_grad()
+
+            loss_note.backward()
+
+            
+            with torch.no_grad():
+                for param in model_note.parameters():
+                    param -= learning_rate_note * param.grad
 
 
-        if loss_note_val < THRESHOLD: 
+            if loss_note_val < THRESHOLD: 
 
-            break
-
-
-
-    if LEARN_VEL: 
-
-        y_pred_vel = model_vel(x_vel)
-        loss_vel = loss_fn(y_pred_vel, y_vel)
-
-        loss_vel_val =  loss_vel.item()
-
-        model_vel.zero_grad()
-
-        loss_vel.backward()
-
-        
-        with torch.no_grad():
-            for param in model_vel.parameters():
-                param -= learning_rate_vel * param.grad
-
-    if LEARN_ONOFF: 
-
-        y_pred_onOff = model_onOff(x_onOff)
-
-        loss_onOff = loss_fn(y_pred_onOff, y_onOff)
-
-        loss_onOff_val =  loss_onOff.item()
-
-        model_onOff.zero_grad()
-
-        loss_onOff.backward()
-
-        
-        with torch.no_grad():
-            for param in model_onOff.parameters():
-                param -= learning_rate_onoff * param.grad
+                break
 
 
-    print(t, loss_note_val, "   ", loss_vel_val, "    ", loss_onOff_val)
 
-    if t % 100 == 0 : 
-        learning_rate_note = alpha * learning_rate_note
-        learning_rate_vel = alpha * learning_rate_vel
-        learning_rate_onoff = alpha * learning_rate_onoff
+        if LEARN_VEL: 
+
+            y_pred_vel = model_vel(x_vel)
+            loss_vel = loss_fn(y_pred_vel, y_vel)
+
+            loss_vel_val =  loss_vel.item()
+
+            model_vel.zero_grad()
+
+            loss_vel.backward()
+
+            
+            with torch.no_grad():
+                for param in model_vel.parameters():
+                    param -= learning_rate_vel * param.grad
+
+        if LEARN_ONOFF: 
+
+            y_pred_onOff = model_onOff(x_onOff)
+
+            loss_onOff = loss_fn(y_pred_onOff, y_onOff)
+
+            loss_onOff_val =  loss_onOff.item()
+
+            model_onOff.zero_grad()
+
+            loss_onOff.backward()
+
+            
+            with torch.no_grad():
+                for param in model_onOff.parameters():
+                    param -= learning_rate_onoff * param.grad
+
+
+        print(t, loss_note_val, "   ", loss_vel_val, "    ", loss_onOff_val)
+
+        if t % 100 == 0 : 
+            learning_rate_note = alpha * learning_rate_note
+            learning_rate_vel = alpha * learning_rate_vel
+            learning_rate_onoff = alpha * learning_rate_onoff
 
 
 ############ END DEEP LEARNING ########################
