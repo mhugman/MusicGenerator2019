@@ -169,11 +169,11 @@ onOffArray_source_square = toSquareArray(onOffArray_source)
 
 midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "parsed_" + FILESOURCE)
 
-#mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
+mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
 
-#playMidi(mid)
+playMidi(mid)
 
-#raise ValueError(234234)
+raise ValueError(234234)
 
 
 

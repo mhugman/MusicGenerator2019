@@ -15,7 +15,7 @@ MAX_POLYPHONY = globalvars.MAX_POLYPHONY
 NUM_MIDI_TRACKS = globalvars.NUM_MIDI_TRACKS
 TEMPO = globalvars.TEMPO 
 
-MAX_SUSTAIN = 20 # maximum time to sustain a note before it gets removed
+MAX_SUSTAIN = 200 # maximum time to sustain a note before it gets removed
 MIN_LENGTH = 100
 
 
@@ -128,6 +128,21 @@ def parseMidi(mid):
 
 
                         #print("currentNotes: ", currentNotes)
+
+                        # fill in the value for this particular time with the current Notes
+                        if len(currentNotes) > 0:  
+                            for k in range(MAX_POLYPHONY): 
+                                
+                                if k < len(currentNotes) and currentNotes[k][0] == message.note + 1: 
+                                    try:  
+                                        noteArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][0])
+                                        velocityArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][1])
+                                        onOffArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][2])
+                                    except: 
+                                        #raise ValueError(message, i, currentTime, currentNotes)
+                                        pass
+
+
                     
                     elif message.type == "note_off": 
                         for x in currentNotes: 
@@ -137,24 +152,24 @@ def parseMidi(mid):
                                     delQ.pop(x_idx)
                                     timeQ.pop(x_idx)
                                     currentNotes.remove(x)
+
+
                                 except: 
 
                                     print("timeQ: ", timeQ)
                                     print("trying to remove ", x)
+
+
+                            ## TO DO : add -1 to onOffArray in appropriate place
+
+
                                 
 
                         #currentNotes.remove((message.note + 1, message.velocity))   
+
+                    
                      
-                    # fill in the value for this particular time with the current Notes
-                    if len(currentNotes) > 0:  
-                        for k in range(MAX_POLYPHONY):   
-                            try:  
-                                noteArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][0])
-                                velocityArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][1])
-                                onOffArray[i + k * NUM_MIDI_TRACKS][currentTime] = np.asarray(currentNotes[k][2])
-                            except: 
-                                #raise ValueError(message, i, currentTime, currentNotes)
-                                pass
+                    
                     
                     #print("noteArray: ", noteArray[:,:currentTime])
                     #print("velocityArray: ", velocityArray[:,:currentTime])
@@ -195,23 +210,25 @@ def createMidi(noteArray, velocityArray, onOffArray, adjTempo, filename):
     
         # add an empty first track (for testing)
     
-        mid.add_track(name= str(0))
-        track = mid.tracks[0]
+        #mid.add_track(name= str(0))
+        #track = mid.tracks[0]
             
         #track.append(MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=96, notated_32nd_notes_per_beat=8, time=0))
-        track.append(MetaMessage('set_tempo', tempo=adjTempo, time=0))
+        
 
         numMessages = 0 
     
         for i in range(noteArray.shape[0]): 
             
-            mid.add_track(name= str(i + 1))
-            track = mid.tracks[i + 1]
+            mid.add_track(name= str(i))
+            track = mid.tracks[i]
+
+            track.append(MetaMessage('set_tempo', tempo=adjTempo, time=0))
             
-            track.append(Message('control_change', channel = i, control=0, value=0, time=0))
+            #track.append(Message('control_change', channel = 1, control=0, value=0, time=0))
 
             # Grand Piano
-            track.append(Message('program_change', channel = i, program=0, time=0))
+            track.append(Message('program_change', channel = 1, program=0, time=0))
             '''
             if i >= 0 and i < 3: 
                 # Grand Piano
@@ -266,13 +283,13 @@ def createMidi(noteArray, velocityArray, onOffArray, adjTempo, filename):
                     
                 if onOff > 0.6: 
 
-                    track.append(Message('note_on', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    track.append(Message('note_on', channel = 1, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                     messageGenerated = True
 
                 elif onOff < -0.6: 
                      
 
-                    track.append(Message('note_off', channel = i, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
+                    track.append(Message('note_off', channel = 1, note= noteValue, velocity=noteVelocity, time=timeSinceLastMessage))
                     messageGenerated = True
 
                 else: 
