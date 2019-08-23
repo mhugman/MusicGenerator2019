@@ -7,14 +7,20 @@ from mido.midifiles import MidiTrack
 from mido import MetaMessage
 from mido import Message
 
+import globalvars
+
+
+SONG_LENGTH = globalvars.SONG_LENGTH
+MAX_POLYPHONY = globalvars.MAX_POLYPHONY
+NUM_MIDI_TRACKS = globalvars.NUM_MIDI_TRACKS
+TEMPO = globalvars.TEMPO 
+
 MAX_SUSTAIN = 20 # maximum time to sustain a note before it gets removed
 MIN_LENGTH = 100
 
-SONG_LENGTH = 60000 # About 120000 for mario
-MAX_POLYPHONY = 3
-NUM_MIDI_TRACKS = 3
+
 NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
-TEMPO = 220 # mario about 850 BPM
+
 
 
 '''
@@ -126,7 +132,17 @@ def parseMidi(mid):
                     elif message.type == "note_off": 
                         for x in currentNotes: 
                             if x[0] == message.note + 1: 
-                                 currentNotes.remove(x)
+                                try: 
+                                    x_idx = delQ.index(x)
+                                    delQ.pop(x_idx)
+                                    timeQ.pop(x_idx)
+                                    currentNotes.remove(x)
+                                except: 
+
+                                    print("timeQ: ", timeQ)
+                                    print("trying to remove ", x)
+                                
+
                         #currentNotes.remove((message.note + 1, message.velocity))   
                      
                     # fill in the value for this particular time with the current Notes
@@ -150,8 +166,11 @@ def parseMidi(mid):
                 while timeQ.count(0) > 0 : 
 
                     zeroIdx = timeQ.index(0)
-
-                    currentNotes.remove(delQ[zeroIdx])
+                    try: 
+                        currentNotes.remove(delQ[zeroIdx])
+                    except: 
+                        print("currentNotes: ", currentNotes)
+                        print("trying to delete: ", delQ[zeroIdx])
                     delQ.pop(zeroIdx)
                     timeQ.pop(zeroIdx)
 
@@ -165,7 +184,7 @@ def parseMidi(mid):
     #raise ValueError(noteArray.shape[1])            
     return noteArray, velocityArray, onOffArray
 
-def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename): 
+def createMidi(noteArray, velocityArray, onOffArray, adjTempo, filename): 
 
     '''
     This function will take a 3D numpy note Array (e.g. parsed from a midi file), and turn it into 
@@ -180,7 +199,7 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
         track = mid.tracks[0]
             
         #track.append(MetaMessage('time_signature', numerator=4, denominator=4, clocks_per_click=96, notated_32nd_notes_per_beat=8, time=0))
-        track.append(MetaMessage('set_tempo', tempo=TEMPO, time=0))
+        track.append(MetaMessage('set_tempo', tempo=adjTempo, time=0))
 
         numMessages = 0 
     
@@ -219,7 +238,7 @@ def createMidi(noteArray, velocityArray, onOffArray, TEMPO, filename):
             timeSinceLastMessage = 0
 
 
-            for j in range(noteArray.shape[1]):
+            for j in range(min(noteArray.shape[1], velocityArray.shape[1], onOffArray.shape[1])):
 
                 messageGenerated = False
 

@@ -6,6 +6,7 @@ import sys
 import datetime
 
 import midiFunctions
+import globalvars
 
 np.set_printoptions(threshold=sys.maxsize)
 torch.set_printoptions(threshold=10000)
@@ -13,11 +14,12 @@ torch.set_printoptions(threshold=10000)
 
 ############ GLOBAL PARAMETERS ######################
 
-SONG_LENGTH = 60000 # About 120000 for mario
-MAX_POLYPHONY = 3
-NUM_MIDI_TRACKS = 3
+SONG_LENGTH = globalvars.SONG_LENGTH
+MAX_POLYPHONY = globalvars.MAX_POLYPHONY
+NUM_MIDI_TRACKS = globalvars.NUM_MIDI_TRACKS
+TEMPO = globalvars.TEMPO
+
 NUM_TRACKS = NUM_MIDI_TRACKS * MAX_POLYPHONY
-TEMPO = 220 # mario about 850 BPM
 
 LEARN_NOTES = True
 LEARN_VEL = False
@@ -25,17 +27,17 @@ LEARN_ONOFF = True
 
 
 H = 600 # dimensions for hidden layer
-ITERATIONS = 100
-LEARNING_RATE_NOTE = 5e-5 # 1e-4 for mario
+ITERATIONS = 5000
+LEARNING_RATE_NOTE = 1e-4 # 1e-4 for mario
 LEARNING_RATE_VEL = 1e-5 # 1e-4 for mario
 LEARNING_RATE_ONOFF = 1e-7
 
-alpha = 0.99
+alpha = 0.995
 
-FILEPRE = "generated_midi/emulate_masterofpuppets"
+FILEPRE = "generated_midi/emulate_moonlight"
 FILEPOST = "firsttry"
 
-FILESOURCE = "masterofpuppets_b"
+FILESOURCE = "moonlight"
 
 # Calculate global parameter for square Matrix
 
@@ -78,8 +80,12 @@ def toSquareArray(rectArray):
             #print("rect source col from ", NUM_TRACKS * chunk, "to ", NUM_TRACKS * chunk + NUM_TRACKS)
 
             #print("source: ", rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS])
+            
+            try: 
+                squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS] = rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS]
+            except: 
 
-            squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS] = rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS]
+                print("size mismatch to square")
             
             #print("destination: ", squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS] )
 
@@ -118,8 +124,10 @@ def toRectArray(squareArray):
 
             #print("source: ", squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS])
 
-
-            rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS] = squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS]
+            try: 
+                rectArray[:, NUM_TRACKS * chunk : NUM_TRACKS * chunk + NUM_TRACKS] = squareArray[NUM_TRACKS * i : NUM_TRACKS * i + NUM_TRACKS ,NUM_TRACKS * j : NUM_TRACKS * j + NUM_TRACKS]
+            except: 
+                print("size mismatch to rect")
 
             #print(rectArray[:,:NUM_TRACKS * chunk + NUM_TRACKS])
 
