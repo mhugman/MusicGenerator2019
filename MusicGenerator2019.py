@@ -27,15 +27,16 @@ LEARN_ONOFF = True
 
 
 H = 600 # dimensions for hidden layer
-ITERATIONS = 5000
+ITERATIONS = 30000
+THRESHOLD = 1.0
 LEARNING_RATE_NOTE = 1e-4 # 1e-4 for mario
 LEARNING_RATE_VEL = 1e-5 # 1e-4 for mario
 LEARNING_RATE_ONOFF = 1e-7
 
-alpha = 0.995
+alpha = 0.999999
 
 FILEPRE = "generated_midi/emulate_moonlight"
-FILEPOST = "firsttry"
+FILEPOST = "fixedparser"
 
 FILESOURCE = "moonlight"
 
@@ -169,11 +170,11 @@ onOffArray_source_square = toSquareArray(onOffArray_source)
 
 midiFunctions.createMidi(noteArray_source, velocityArray_source, onOffArray_source, int(round(60000000 / TEMPO)), "parsed_" + FILESOURCE)
 
-mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
+#mid = mido.MidiFile('midi/parsed_' + FILESOURCE + '.mid')
 
-playMidi(mid)
+#playMidi(mid)
 
-raise ValueError(234234)
+#raise ValueError(234234)
 
 
 
@@ -248,6 +249,11 @@ for t in range(ITERATIONS):
         with torch.no_grad():
             for param in model_note.parameters():
                 param -= learning_rate_note * param.grad
+
+
+        if loss_note_val < THRESHOLD: 
+
+            break
 
 
 
@@ -348,7 +354,7 @@ elif LEARN_NOTES and LEARN_VEL and LEARN_ONOFF:
 
 elif LEARN_NOTES and not LEARN_VEL and LEARN_ONOFF :
 
-    midiFunctions.createMidi(noteArray_source, velocityArray_source, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename + "_nolearnvel"  )
+    midiFunctions.createMidi(y_pred_note_rect, velocityArray_source, y_pred_onOff_rect, int(round(60000000 / TEMPO)), filename + "_nolearnvel"  )
 
     mid = mido.MidiFile("midi/" + filename + "_nolearnvel" + '.mid')
 
